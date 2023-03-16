@@ -1,0 +1,150 @@
+git log --stat | cat
+commit d677102a3c24537e0b034fa1cf66b925fa51f316
+Author: Alanne Sanni M O [sanni.alanne@helsinki.fi](mailto:sanni.alanne@helsinki.fi)
+Date:   Thu Mar 16 13:24:35 2023 +0200
+
+```
+uudelleennimentä ja poisto
+
+```
+
+tiedostoja/file2             | 0
+tiedostoja/{file1 => file22} | 0
+2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit ece9e3e832013492b23d59bbb493e2fedf25a8e7
+Author: Alanne Sanni M O [sanni.alanne@helsinki.fi](mailto:sanni.alanne@helsinki.fi)
+Date:   Thu Mar 16 13:13:49 2023 +0200
+
+```
+luotiin tiedostoja
+
+```
+
+tiedostoja/file1 | 0
+tiedostoja/file2 | 0
+tiedostoja/file3 | 0
+3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 02bd6c410c70c7765435397588faf3c54208d4d1
+Author: Alanne Sanni M O [sanni.alanne@helsinki.fi](mailto:sanni.alanne@helsinki.fi)
+Date:   Thu Mar 16 12:54:13 2023 +0200
+
+```
+muutoksia
+
+```
+
+eka.txt    | 43 ++++++++++++++-----------------------------
+kolmas.txt |  5 ++++-
+2 files changed, 18 insertions(+), 30 deletions(-)
+
+commit e29f0ee5a5273b8e421c6cd2fe30d380f63eba9a
+Author: Alanne Sanni M O [sanni.alanne@helsinki.fi](mailto:sanni.alanne@helsinki.fi)
+Date:   Thu Mar 16 12:51:15 2023 +0200
+
+```
+uudelleennimentä
+
+```
+
+tiedosto.txt => eka.txt | 0
+1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 735be0375bef29051cf8a6e0b5745805a9c7e601
+Author: Alanne Sanni M O [sanni.alanne@helsinki.fi](mailto:sanni.alanne@helsinki.fi)
+Date:   Thu Mar 16 12:48:27 2023 +0200
+
+```
+poistettiin toinen.txt
+
+```
+
+toinen.txt | 1 -
+1 file changed, 1 deletion(-)
+
+commit 9620d031a366f4e63416a3e4ca2a74e61424b6da
+Author: Alanne Sanni M O [sanni.alanne@helsinki.fi](mailto:sanni.alanne@helsinki.fi)
+Date:   Thu Mar 16 11:40:14 2023 +0200
+
+```
+poistettiin ja lisättiin tiedosto.txt
+
+```
+
+tiedosto.txt | 33 +++++++++++++++++++++++----------
+1 file changed, 23 insertions(+), 10 deletions(-)
+
+commit d7164a7a0fced4b2f10a696e73eaeeb2231aa068
+Author: Alanne Sanni M O [sanni.alanne@helsinki.fi](mailto:sanni.alanne@helsinki.fi)
+Date:   Thu Mar 16 11:35:37 2023 +0200
+
+```
+muokattiin tiedosto.txt
+
+```
+
+tiedosto.txt | 21 +++++++++++++++++++++
+1 file changed, 21 insertions(+)
+
+commit 3656d2a9889463c491277460c127d1ff569681c1
+Author: Alanne Sanni M O [sanni.alanne@helsinki.fi](mailto:sanni.alanne@helsinki.fi)
+Date:   Thu Mar 16 11:23:34 2023 +0200
+
+```
+luotiin stuff
+
+```
+
+stuff/testi.txt | 0
+1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit b9475e35d9a80958f93a17a5d0ec0d36e4fcd416
+Author: Alanne Sanni M O [sanni.alanne@helsinki.fi](mailto:sanni.alanne@helsinki.fi)
+Date:   Thu Mar 16 11:20:36 2023 +0200
+
+```
+muokattiin toinen ja kolmas
+
+```
+
+kolmas.txt | 1 +
+toinen.txt | 1 +
+2 files changed, 2 insertions(+)
+
+commit 9d528fce69fb8c6a070925bdccb11fc3bba0b6b6
+Author: Alanne Sanni M O [sanni.alanne@helsinki.fi](mailto:sanni.alanne@helsinki.fi)
+Date:   Thu Mar 16 11:19:10 2023 +0200
+
+```
+luotiin kolmas.txt
+
+```
+
+kolmas.txt | 0
+1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 63d38d9c2e9efd8cf1e015cd68664945a8237253
+Author: Alanne Sanni M O [sanni.alanne@helsinki.fi](mailto:sanni.alanne@helsinki.fi)
+Date:   Thu Mar 16 11:10:41 2023 +0200
+
+```
+muutos ja lisäys
+
+```
+
+tiedosto.txt | 1 +
+toinen.txt   | 0
+2 files changed, 1 insertion(+)
+
+commit cafb37843ed63af0af3278c1447424b7e69fa177
+Author: Alanne Sanni M O [sanni.alanne@helsinki.fi](mailto:sanni.alanne@helsinki.fi)
+Date:   Thu Mar 16 11:04:15 2023 +0200
+
+```
+tiedosto.txt luotu
+
+```
+
+tiedosto.txt | 0
+1 file changed, 0 insertions(+), 0 deletions(-)
