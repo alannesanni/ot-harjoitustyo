@@ -10,4 +10,4 @@
 ## Viikko 2
 [vaatimusmäärittely](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-[työaikakirjanpito](https://github.com/alannesanni/ot-harjoitustyo/tree/master/dokumentaatio)
+[työaikakirjanpito](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
