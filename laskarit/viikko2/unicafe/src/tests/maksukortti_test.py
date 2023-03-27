@@ -25,9 +25,11 @@ class TestMaksukortti(unittest.TestCase):
         self.assertEqual(str(self.maksukortti), "Kortilla on rahaa 10.00 euroa")
 
     def test_metodi_palauttaa_oikean_totuusarvon_true(self):
-        self.maksukortti.ota_rahaa(500)==True
+        totuusarvo=self.maksukortti.ota_rahaa(500)
+        self.assertEqual(totuusarvo, True)
 
     
     def test_metodi_palauttaa_oikean_totuusarvon_false(self):
-        self.maksukortti.ota_rahaa(1500)==False
+        totuusarvo=self.maksukortti.ota_rahaa(1500)
+        self.assertEqual(totuusarvo, False)
         
