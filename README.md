@@ -15,3 +15,8 @@
 [vaatimusmäärittely](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 [työaikakirjanpito](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
+
+## Viikko 3
+[monopoli](https://github.com/alannesanni/ot-harjoitustyo/blob/master/laskarit/viikko3/monopoli.md)
+
+[sekvenssikaaviot](https://github.com/alannesanni/ot-harjoitustyo/blob/master/laskarit/viikko3/sekvenssikaaviot.md)
