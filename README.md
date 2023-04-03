@@ -1,22 +1,23 @@
-# Tehtävät
+# Pong-peli
 
-## Viikko 1
-*Linkit tehtäviin*
+## Dokumentaatio
+- [Vaatimusmäärittely](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+- [Changelog](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
+- [Työaikakirjanpito](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
-[komentorivi.txt](https://github.com/alannesanni/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+## Invoke komennot
+Pelin voi aloittaa komennolla: 
+`poerty run invoke start`
 
-[gitlog.txt](https://github.com/alannesanni/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+Testit suoritetaan komennolla: 
+`poetry run invoke test`
 
-## Viikko 2
-[testikattavuusraportti](https://github.com/alannesanni/ot-harjoitustyo/blob/master/laskarit/viikko2/testikattavuusraportti.md)
+Testikattavuusraportin saa komennolla: 
+`poetry run invoke coverage-report`
 
-*Harjoitustyö*
 
-[vaatimusmäärittely](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+#### Laskarit viikko 3
 
-[työaikakirjanpito](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
-
-## Viikko 3
 [monopoli](https://github.com/alannesanni/ot-harjoitustyo/blob/master/laskarit/viikko3/monopoli.md)
 
 [sekvenssikaaviot](https://github.com/alannesanni/ot-harjoitustyo/blob/master/laskarit/viikko3/sekvenssikaaviot.md)
