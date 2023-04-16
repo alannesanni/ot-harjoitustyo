@@ -14,10 +14,3 @@ Testit suoritetaan komennolla:
 
 Testikattavuusraportin saa komennolla: 
 `poetry run invoke coverage-report`
-
-
-#### Laskarit viikko 3
-
-[monopoli](https://github.com/alannesanni/ot-harjoitustyo/blob/master/laskarit/viikko3/monopoli.md)
-
-[sekvenssikaaviot](https://github.com/alannesanni/ot-harjoitustyo/blob/master/laskarit/viikko3/sekvenssikaaviot.md)
