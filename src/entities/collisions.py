@@ -4,18 +4,18 @@ class Collisions:
             if ball.y + 10 >= paddle.y:
                 return True
         return False
-    
+
     def ball_and_side(self, ball):
-        #left
-        if ball.x - 10 <=0:
+        # left
+        if ball.x - 10 <= 0:
             return True
-        #right
+        # right
         if ball.x + 10 >= 700:
             return True
         return False
-    
+
     def ball_and_top(self, ball):
-        #top
+        # top
         if ball.y - 10 <= 0:
             return True
         return False

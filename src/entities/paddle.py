@@ -1,20 +1,18 @@
-import pygame
 class Paddle:
     def __init__(self, color, x, y, width, height):
-        self.color=color
-        self.x=x
-        self.y=y
-        self.width=width
-        self.height=height
-        self.mode= "still"
-    
+        self.color = color
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+        self.mode = "still"
+
     def get_coordinate(self, letter):
         if letter == "x":
             return self.x
-        elif letter == "y":
+        if letter == "y":
             return self.y
-        else:
-            return "wrong letter"
+        return "wrong letter"
 
     def move(self):
         if self.mode == "left":
