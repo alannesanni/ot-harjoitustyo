@@ -1,6 +1,3 @@
-import pygame
-
-
 class Ball:
     def __init__(self, color, x, y, radius):
         self.color = color
@@ -24,6 +21,9 @@ class Ball:
 
     def paddle_collision(self):
         self.direction_y = -self.direction_y
+
+    def paddle_side_collision(self):
+        self.direction_x = -self.direction_x
 
     def side_wall_collision(self):
         self.direction_x = -self.direction_x
