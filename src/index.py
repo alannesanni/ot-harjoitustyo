@@ -9,7 +9,7 @@ def main():
     width = 700
     height = 500
     screen = pygame.display.set_mode((width, height))
-    pong=Pong(screen)
+    pong = Pong(screen)
 
     Start(screen).draw_screen()
     pong.loop()

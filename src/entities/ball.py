@@ -10,10 +10,9 @@ class Ball:
     def get_coordinate(self, letter):
         if letter == "x":
             return self.x
-        elif letter == "y":
+        if letter == "y":
             return self.y
-        else:
-            return "wrong letter"
+        return "wrong letter"
 
     def move(self):
         self.x += self.direction_x

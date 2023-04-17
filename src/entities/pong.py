@@ -1,3 +1,4 @@
+import sys
 import pygame
 from entities.paddle import Paddle
 from entities.ball import Ball
@@ -10,8 +11,8 @@ class Pong:
         pygame.display.set_caption("Pong")
         self.width = 700
         self.height = 500
-        #self.screen = pygame.display.set_mode((self.width, self.height))
-        self.screen=screen
+        # self.screen = pygame.display.set_mode((self.width, self.height))
+        self.screen = screen
         self.paddle_x = 5
         self.paddle_y = 480
         self.paddle_color = (200, 200, 200)
@@ -30,30 +31,29 @@ class Pong:
         while True:
             if self.ball_y >= 500:
                 break
-            else:
-                self.draw_screen()
-                self.paddle.move()
-                self.ball.move()
-                self.ball_x = self.ball.get_coordinate("x")
-                self.ball_y = self.ball.get_coordinate("y")
-                self.paddle_x = self.paddle.get_coordinate("x")
-                self.draw_paddle()
-                self.draw_ball()
+            self.draw_screen()
+            self.paddle.move()
+            self.ball.move()
+            self.ball_x = self.ball.get_coordinate("x")
+            self.ball_y = self.ball.get_coordinate("y")
+            self.paddle_x = self.paddle.get_coordinate("x")
+            self.draw_paddle()
+            self.draw_ball()
 
-                # collisions
-                if self.collision.ball_and_paddle(self.ball, self.paddle):
-                    self.ball.paddle_collision()
-                    self.score.add_point()
+            # collisions
+            if self.collision.ball_and_paddle(self.ball, self.paddle):
+                self.ball.paddle_collision()
+                self.score.add_point()
 
-                if self.collision.ball_and_paddle_side(self.ball, self.paddle):
-                    self.ball.paddle_side_collision()
-                    self.score.add_point()
+            if self.collision.ball_and_paddle_side(self.ball, self.paddle):
+                self.ball.paddle_side_collision()
+                self.score.add_point()
 
-                if self.collision.ball_and_side(self.ball):
-                    self.ball.side_wall_collision()
+            if self.collision.ball_and_side(self.ball):
+                self.ball.side_wall_collision()
 
-                if self.collision.ball_and_top(self.ball):
-                    self.ball.top_wall_collision()
+            if self.collision.ball_and_top(self.ball):
+                self.ball.top_wall_collision()
 
             self.events()
             clock.tick(30)
@@ -61,7 +61,7 @@ class Pong:
     def events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                exit()
+                sys.exit()
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
@@ -82,9 +82,9 @@ class Pong:
                            (self.ball_x, self.ball_y), 10)
 
     def draw_score(self):
-        self.points_text = self.font.render(
+        points_text = self.font.render(
             str(self.score.points), 0, (200, 200, 200))
-        self.screen.blit(self.points_text, (10, 10))
+        self.screen.blit(points_text, (10, 10))
 
     def draw_screen(self):
         self.screen.fill((0, 0, 0))
