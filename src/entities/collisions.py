@@ -1,26 +1,30 @@
 class Collisions:
     def ball_and_paddle(self, ball, paddle):
-        if ball.x + 10 > paddle.x and ball.x - 10 < paddle.x + paddle.width:
-            if ball.y + 10 >= paddle.y:
+        if ball.x_coord + 10 > paddle.x_coord and ball.x_coord - 10 < paddle.x_coord + paddle.width:
+            if ball.y_coord + 10 >= paddle.y_coord:
                 return True
         return False
 
     def ball_and_paddle_side(self, ball, paddle):
-        if paddle.x-10 <= ball.x + 10 <= paddle.x+10 or paddle.x+paddle.width-10 <= ball.x - 10 <= paddle.x + paddle.width+10:
-            if ball.y + 10 >= paddle.y:
+        if paddle.x_coord+paddle.width-10 <= ball.x_coord - 10 <= paddle.x_coord + paddle.width+10:
+            if ball.y_coord + 10 >= paddle.y_coord:
                 return True
+        if paddle.x_coord-10 <= ball.x_coord + 10 <= paddle.x_coord+10:
+            if ball.y_coord + 10 >= paddle.y_coord:
+                return True
+
         return False
 
     def ball_and_side(self, ball):
         # left
-        if ball.x - 10 <= 0:
+        if ball.x_coord - 10 <= 0:
             return True
         # right
-        if ball.x + 10 >= 700:
+        if ball.x_coord + 10 >= 700:
             return True
         return False
 
     def ball_and_top(self, ball):
-        if ball.y - 10 <= 0:
+        if ball.y_coord - 10 <= 0:
             return True
         return False

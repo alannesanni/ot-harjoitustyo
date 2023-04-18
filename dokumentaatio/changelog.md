@@ -8,5 +8,5 @@
 - Luotu Ball luokka, joka vastaa pallosta ja sen liikkeistä
 - Luotu Collisions luokka, joka havaitsee pallon törmäykset
 - Luotu Score luokka, joka pitää kirjaa saaduista pisteistä
-
+- Lisätty aloitus- ja lopetusnäyttö ja niille omat luokat Start ja GameOver
 

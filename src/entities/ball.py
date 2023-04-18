@@ -1,22 +1,22 @@
 class Ball:
-    def __init__(self, color, x, y, radius):
+    def __init__(self, color, x_coord, y_coord, radius):
         self.color = color
-        self.x = x
-        self.y = y
+        self.x_coord = x_coord
+        self.y_coord = y_coord
         self.radius = radius
         self.direction_x = 15
         self.direction_y = 5
 
     def get_coordinate(self, letter):
         if letter == "x":
-            return self.x
+            return self.x_coord
         if letter == "y":
-            return self.y
+            return self.y_coord
         return "wrong letter"
 
     def move(self):
-        self.x += self.direction_x
-        self.y += self.direction_y
+        self.x_coord += self.direction_x
+        self.y_coord += self.direction_y
 
     def paddle_collision(self):
         self.direction_y = -self.direction_y
