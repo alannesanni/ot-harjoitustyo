@@ -53,21 +53,20 @@ class TestPong(unittest.TestCase):
     # Ball tests:
     def test_move(self):
         self.ball.move()
-        self.assertEqual(self.ball.x_coord, 115)
+        self.assertEqual(self.ball.x_coord, 113)
         self.assertEqual(self.ball.y_coord, 105)
 
     def test_ball_paddle_collision(self):
         self.ball.paddle_collision()
         self.assertEqual(self.ball.direction_y, -5)
-    
+
     def test_ball_paddle_side_collision(self):
         self.ball.paddle_side_collision()
-        self.assertEqual(self.ball.direction_x, -15)
-
+        self.assertEqual(self.ball.direction_x, -13)
 
     def test_ball_side_wall_collision(self):
         self.ball.side_wall_collision()
-        self.assertEqual(self.ball.direction_x, -15)
+        self.assertEqual(self.ball.direction_x, -13)
 
     def test_ball_top_wall_collision(self):
         self.ball.top_wall_collision()

@@ -4,7 +4,7 @@ class Ball:
         self.x_coord = x_coord
         self.y_coord = y_coord
         self.radius = radius
-        self.direction_x = 15
+        self.direction_x = 13
         self.direction_y = 5
 
     def get_coordinate(self, letter):
@@ -20,7 +20,7 @@ class Ball:
 
     def paddle_collision(self):
         self.direction_y = -self.direction_y
-       
+
     def paddle_side_collision(self):
         self.direction_x = -self.direction_x
 
@@ -29,5 +29,3 @@ class Ball:
 
     def top_wall_collision(self):
         self.direction_y = -self.direction_y
-
-

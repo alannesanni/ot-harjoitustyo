@@ -10,3 +10,8 @@
 - Luotu Score luokka, joka pitää kirjaa saaduista pisteistä
 - Lisätty aloitus- ja lopetusnäyttö ja niille omat luokat Start ja GameOver
 
+## Viikko 5
+- Lisätty etusivulle mahdollisuus kirjoittaa käyttäjänimi
+- Luotu repositories kansio ja sinne tietokantaan liittyvät tiedostot
+- Luotu ScoreDatabase luokka, joka vastaa tietokannan luomisesta ja tietojen (käyttäjänimi ja pisteet) tallennuksesta
+- Luotu ScoreBoard luokka, joka vastaa tulostaulu näkymästä

@@ -9,13 +9,13 @@ def main():
     pygame.init()
     width = 700
     height = 500
-    database=ScoreDatabase()
+    database = ScoreDatabase()
     database.create_database()
     while True:
         screen = pygame.display.set_mode((width, height))
         pong = Pong(screen)
         start = Start(screen)
-        gameover=GameOver(pong, screen, database)
+        gameover = GameOver(pong, screen, database)
         start.loop()
         pong.loop()
         database.add_score(start.username, pong.score.points)
