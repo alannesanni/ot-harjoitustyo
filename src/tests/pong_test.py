@@ -59,6 +59,11 @@ class TestPong(unittest.TestCase):
     def test_ball_paddle_collision(self):
         self.ball.paddle_collision()
         self.assertEqual(self.ball.direction_y, -5)
+    
+    def test_ball_paddle_side_collision(self):
+        self.ball.paddle_side_collision()
+        self.assertEqual(self.ball.direction_x, -15)
+
 
     def test_ball_side_wall_collision(self):
         self.ball.side_wall_collision()
@@ -86,12 +91,68 @@ class TestPong(unittest.TestCase):
         boolean = self.collisions.ball_and_paddle(self.ball, self.paddle)
         self.assertEqual(boolean, True)
 
-    def test_collisions_ball_and_paddle_fasle(self):
+    def test_collisions_ball_and_paddle_fasle_1(self):
+        self.ball.x_coord = 400
+        self.ball.y_coord = 100
+        self.paddle.x_coord = 200
+        self.paddle.y_coord = 480
+        boolean = self.collisions.ball_and_paddle(self.ball, self.paddle)
+        self.assertEqual(boolean, False)
+
+    def test_collisions_ball_and_paddle_fasle_2(self):
         self.ball.x_coord = 250
         self.ball.y_coord = 100
         self.paddle.x_coord = 200
         self.paddle.y_coord = 480
         boolean = self.collisions.ball_and_paddle(self.ball, self.paddle)
+        self.assertEqual(boolean, False)
+
+    def test_collisions_ball_and_paddle_left_side_true(self):
+        self.ball.x_coord = 200
+        self.ball.y_coord = 475
+        self.paddle.x_coord = 200
+        self.paddle.y_coord = 480
+        boolean = self.collisions.ball_and_paddle_side(self.ball, self.paddle)
+        self.assertEqual(boolean, True)
+
+    def test_collisions_ball_and_paddle_right_side_true(self):
+        self.ball.x_coord = 330
+        self.ball.y_coord = 475
+        self.paddle.x_coord = 200
+        self.paddle.y_coord = 480
+        boolean = self.collisions.ball_and_paddle_side(self.ball, self.paddle)
+        self.assertEqual(boolean, True)
+
+    def test_collisions_ball_and_paddle_right_side_fasle_1(self):
+        self.ball.x_coord = 330
+        self.ball.y_coord = 100
+        self.paddle.x_coord = 200
+        self.paddle.y_coord = 480
+        boolean = self.collisions.ball_and_paddle_side(self.ball, self.paddle)
+        self.assertEqual(boolean, False)
+
+    def test_collisions_ball_and_paddle_right_side_fasle_2(self):
+        self.ball.x_coord = 450
+        self.ball.y_coord = 100
+        self.paddle.x_coord = 200
+        self.paddle.y_coord = 480
+        boolean = self.collisions.ball_and_paddle_side(self.ball, self.paddle)
+        self.assertEqual(boolean, False)
+
+    def test_collisions_ball_and_paddle_left_side_fasle_1(self):
+        self.ball.x_coord = 200
+        self.ball.y_coord = 100
+        self.paddle.x_coord = 200
+        self.paddle.y_coord = 480
+        boolean = self.collisions.ball_and_paddle_side(self.ball, self.paddle)
+        self.assertEqual(boolean, False)
+
+    def test_collisions_ball_and_paddle_left_side_fasle_2(self):
+        self.ball.x_coord = 400
+        self.ball.y_coord = 100
+        self.paddle.x_coord = 200
+        self.paddle.y_coord = 480
+        boolean = self.collisions.ball_and_paddle_side(self.ball, self.paddle)
         self.assertEqual(boolean, False)
 
     def test_collisions_ball_and__left_side_true(self):

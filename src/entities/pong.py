@@ -11,7 +11,6 @@ class Pong:
         pygame.display.set_caption("Pong")
         self.width = 700
         self.height = 500
-        # self.screen = pygame.display.set_mode((self.width, self.height))
         self.screen = screen
         self.paddle_x = 5
         self.paddle_y = 480
@@ -32,30 +31,39 @@ class Pong:
             if self.ball_y >= 500:
                 break
             self.draw_screen()
-            self.paddle.move()
             self.ball.move()
+            self.paddle.move()
             self.ball_x = self.ball.get_coordinate("x")
             self.ball_y = self.ball.get_coordinate("y")
             self.paddle_x = self.paddle.get_coordinate("x")
             self.draw_paddle()
             self.draw_ball()
+        
+            self.events()
 
             # collisions
             if self.collision.ball_and_paddle(self.ball, self.paddle):
                 self.ball.paddle_collision()
                 self.score.add_point()
-
             if self.collision.ball_and_paddle_side(self.ball, self.paddle):
                 self.ball.paddle_side_collision()
                 self.score.add_point()
-
+                self.ball.move()
+                self.ball_x = self.ball.get_coordinate("x")
+                self.ball_y = self.ball.get_coordinate("y")
+                self.draw_ball()
+                self.ball.move()
+                self.ball_x = self.ball.get_coordinate("x")
+                self.ball_y = self.ball.get_coordinate("y")
+                self.draw_ball()
+                
             if self.collision.ball_and_side(self.ball):
                 self.ball.side_wall_collision()
 
             if self.collision.ball_and_top(self.ball):
                 self.ball.top_wall_collision()
 
-            self.events()
+            
             clock.tick(30)
 
     def events(self):
@@ -92,3 +100,4 @@ class Pong:
         self.draw_paddle()
         self.draw_ball()
         pygame.display.flip()
+
