@@ -5,7 +5,8 @@ from entities.ball import Ball
 from entities.collisions import Collisions
 from entities.score import Score
 
-WHITE=(200,200,200)
+WHITE = (200, 200, 200)
+
 
 class Pong:
     def __init__(self, screen):
@@ -28,17 +29,15 @@ class Pong:
             if self.ball_y >= 500:
                 break
             self.draw_screen()
-            self.ball.move()
             self.paddle.move()
+            self.ball.move()
             self.ball_x = self.ball.get_coordinate("x")
             self.ball_y = self.ball.get_coordinate("y")
             self.paddle_x = self.paddle.get_coordinate("x")
             self.draw_paddle()
             self.draw_ball()
-
-            self.events()
             self.check_collisions()
-
+            self.events()
             clock.tick(30)
 
     def events(self):
@@ -75,7 +74,6 @@ class Pong:
         if self.collision.ball_and_top(self.ball):
             self.ball.top_wall_collision()
 
-
     def draw_paddle(self):
         pygame.draw.rect(self.screen, WHITE,
                          (self.paddle_x, self.paddle_y, 120, 20))
@@ -87,7 +85,7 @@ class Pong:
     def draw_score(self):
         points_text = self.font.render(
             str(self.score.points), 0, (200, 200, 200))
-        self.screen.blit(points_text, (10, 10))
+        self.screen.blit(points_text, (20, 5))
 
     def draw_screen(self):
         self.screen.fill((0, 0, 0))

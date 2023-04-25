@@ -3,11 +3,11 @@ import pygame
 
 
 class ScoreBoard:
-    def __init__(self, screen, database):
+    def __init__(self, screen, database_connection):
         self.screen = screen
         self.font = pygame.font.SysFont("arial", 30, bold=True)
-        self.db = database
-        self.top_list = self.db.get_top_5()
+        self.db_connection = database_connection
+        self.top_list = ScoreDatabase(self.db_connection).get_top_5()
 
     def draw_screen(self):
         y_coord = 100

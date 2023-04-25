@@ -18,11 +18,11 @@ class Collisions:
         return False
 
     def ball_and_side(self, ball):
-        # right
-        if ball.x_coord + 10 >= 700:
-            return True
         # left
         if ball.x_coord - 10 <= 0:
+            return True
+         # right
+        if ball.x_coord + 10 >= 700:
             return True
         return False
 

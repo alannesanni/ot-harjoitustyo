@@ -1,10 +1,9 @@
 import sqlite3
-from repositories.database_connection import get_database_connection
 
 
 class ScoreDatabase:
-    def __init__(self):
-        self.database = get_database_connection()
+    def __init__(self, connection):
+        self.database_connection = connection
 
     def create_database(self):
         try:
@@ -13,13 +12,14 @@ class ScoreDatabase:
             pass
 
     def create_table(self):
-        self.database.execute(
+        self.database_connection.execute(
             "CREATE TABLE Scores (id INTEGER PRIMARY KEY, username TEXT, score INTEGER);")
 
     def add_score(self, name, score):
-        self.database.execute(
+        self.database_connection.execute(
             "INSERT INTO Scores (username, score) VALUES (?,?);", (name, score))
+        self.database_connection.commit()
 
     def get_top_5(self):
         get_5 = "SELECT username, score FROM Scores ORDER BY score DESC LIMIT 5;"
-        return self.database.execute(get_5).fetchall()
+        return self.database_connection.execute(get_5).fetchall()

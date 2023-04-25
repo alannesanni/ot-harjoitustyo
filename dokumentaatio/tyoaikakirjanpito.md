@@ -13,4 +13,5 @@ päivä | aika (h) | kuvaus
 21.4. | 6 | käyttäjänimen ja tuloksen tallennus tietokantaan
 22.4. | 4 | tulostaulun luominen, satunnaisten testien lisäys
 24.4. | 5 | koodin laadun parannus ja bugin korjauksen yritys 
-yhteensä |  36 |
+25.4. | 4 | tietokannan toiminnan parannus
+yhteensä |  40 |

@@ -1,14 +1,15 @@
 import pygame
 from ui.scoreboard import ScoreBoard
+from repositories.score_repository import ScoreDatabase
 
 
 class GameOver:
-    def __init__(self, game, screen, database):
+    def __init__(self, game, screen, database_connection):
         self.game = game
         self.screen = screen
         self.font = pygame.font.SysFont("arial", 60, bold=True)
         self.font_small = pygame.font.SysFont("arial", 20, bold=True)
-        self.database = database
+        self.database_connection = database_connection
 
     def draw_screen(self):
         pygame.display.set_caption("Pong")
@@ -40,4 +41,5 @@ class GameOver:
                     if event.key == pygame.K_RETURN:
                         return
                     if event.key == pygame.K_SPACE:
-                        ScoreBoard(self.screen, self.database).loop()
+                        ScoreBoard(
+                            self.screen, self.database_connection).loop()

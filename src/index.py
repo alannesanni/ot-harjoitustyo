@@ -3,22 +3,23 @@ from entities.pong import Pong
 from ui.gameover import GameOver
 from ui.start import Start
 from repositories.score_repository import ScoreDatabase
+from repositories.database_connection import get_database_connection
 
 
 def main():
     pygame.init()
     width = 700
     height = 500
-    database = ScoreDatabase()
-    database.create_database()
+    connection = get_database_connection()
+    ScoreDatabase(connection).create_database()
     while True:
         screen = pygame.display.set_mode((width, height))
         pong = Pong(screen)
         start = Start(screen)
-        gameover = GameOver(pong, screen, database)
+        gameover = GameOver(pong, screen, connection)
         start.loop()
         pong.loop()
-        database.add_score(start.username, pong.score.points)
+        ScoreDatabase(connection).add_score(start.username, pong.score.points)
         gameover.loop()
 
 

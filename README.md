@@ -18,6 +18,9 @@ Asenna ensin riippuvuudet komennolla:
 Käynnistä peli komennolla:
 `poetry invoke start`
 
+Tietokannan voi tyhjentää komennolla:
+`poetry invoke empty-database`
+
 ## Invoke komennot
 Pelin voi käynnistää komennolla: 
 `poerty run invoke start`
@@ -30,3 +33,6 @@ Testikattavuusraportin saa komennolla:
 
 Pylint-tarkistuksen voi suorittaa komennolla:
 `poetry run invoke lint`
+
+Tietokannan voi tyhjentää komennolla:
+`poetry invoke empty-database`
