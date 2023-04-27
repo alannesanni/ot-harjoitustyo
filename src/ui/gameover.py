@@ -4,7 +4,23 @@ from repositories.score_repository import ScoreDatabase
 
 
 class GameOver:
+    """Luokka, joka vastaa lopetusnäytön käyttöliittymästä.
+
+    Attributes:
+        game: Peli, joka on juuri hävitty
+        screen: Näyttö, johon teksti lisätään
+        database_connection: Yhteys tietokantaan, jotta voidaan välittää se tulostaululle myöhemmin
+
+    """
     def __init__(self, game, screen, database_connection):
+        """Luokan konstruktori, joka luo pohjan lopetusnäytölle.
+
+        Args:
+            game: Peli, joka on juuri hävitty
+            screen: Näyttö, johon teksti lisätään
+            database_connection: Yhteys tietokantaan, jotta voidaan välittää se tulostaululle myöhemmin
+
+        """
         self.game = game
         self.screen = screen
         self.font = pygame.font.SysFont("arial", 60, bold=True)
@@ -12,6 +28,8 @@ class GameOver:
         self.database_connection = database_connection
 
     def draw_screen(self):
+        """Piirtää ruudulle oikeat asiat.
+        """
         pygame.display.set_caption("Pong")
         self.screen.fill((0, 0, 0))
         end_score = self.font.render(
@@ -30,6 +48,8 @@ class GameOver:
         pygame.display.flip()
 
     def loop(self):
+        """Lopetusruudun silmukka, joka reagoi käyttäjän syötteisiin.
+        """
         while True:
             self.draw_screen()
             for event in pygame.event.get():

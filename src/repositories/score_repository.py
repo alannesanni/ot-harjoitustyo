@@ -20,6 +20,10 @@ class ScoreDatabase:
             "INSERT INTO Scores (username, score) VALUES (?,?);", (name, score))
         self.database_connection.commit()
 
+    def get_all(self):
+        get_all = "SELECT username, score FROM Scores ORDER BY score DESC LIMIT 5;"
+        return self.database_connection.execute(get_all).fetchall()
+
     def get_top_5(self):
         get_5 = "SELECT username, score FROM Scores ORDER BY score DESC LIMIT 5;"
         return self.database_connection.execute(get_5).fetchall()

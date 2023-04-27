@@ -3,13 +3,30 @@ import pygame
 
 
 class ScoreBoard:
+    """Luokka, joka vastaa tulostaulun käyttöliittymästä.
+
+    Attributes:
+        screen: Näyttö, jolle grafiikat piirretään
+        font: Fontti, jota piirtämisessä käytetään
+        database_connection: Luo yhteyden tietokantaan
+    """
     def __init__(self, screen, database_connection):
+        """Luokan konstruktori joka alustaa käytetyt atribuutit
+
+        Args:
+            screen: Näyttö, jolle grafiikat piirretään
+            font: Fontti, jota piirtämisessä käytetään
+            db_connection: Luo yhteyden tietokantaan
+            top_list: Hakee listaan tietokannasta viisi parasta tulosta
+        """
         self.screen = screen
         self.font = pygame.font.SysFont("arial", 30, bold=True)
         self.db_connection = database_connection
         self.top_list = ScoreDatabase(self.db_connection).get_top_5()
 
     def draw_screen(self):
+        """Piirtää näytölle tulostaulun grafiikat.
+        """
         y_coord = 100
         rank = 1
         pygame.display.set_caption("Pong")
@@ -30,6 +47,8 @@ class ScoreBoard:
         pygame.display.flip()
 
     def loop(self):
+        """Tulostaulun näytön silmukka, joka reagoi käyttäjän syötteisiin.
+        """
         self.draw_screen()
         while True:
             for event in pygame.event.get():
