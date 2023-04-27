@@ -6,6 +6,7 @@ Pelaajan on laudan avulla tarkoitus estää palloa osumasta ruudun alareunaan. L
 - [Viikko 5](https://github.com/alannesanni/ot-harjoitustyo/releases/tag/viikko5)
 
 ## Dokumentaatio
+- [Käyttöohje](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 - [Vaatimusmäärittely](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 - [Changelog](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 - [Työaikakirjanpito](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
