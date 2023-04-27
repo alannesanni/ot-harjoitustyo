@@ -125,4 +125,3 @@ sequenceDiagram
   scoreboard ->> scoreboard: draw_screen()
 ```
 Kaaviossa havainnoidaan vain tietojen tallennuksen kulkua, joten siinä ei oteta kantaa siihen millä päänäkymällä ollaan milläkin hetkellä.
-
