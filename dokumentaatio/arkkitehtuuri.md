@@ -13,6 +13,7 @@ Käyttöliittymän eri näkymät:
 * Pelaus
 * Lopetus
 * Tulostaulu
+
 Jokainen näistä on toteutettu omana luokkanaan. Pelausnäytön käyttöliittymää en saanut erotettua pelilogiikasta, joten siitä vastaava Pong-luokka sijaitsee entities kansiossa. Muut käyttöliittymän luokat sijaitsevat ui-kansiossa.
 Index.py tiedostossa sijaitseva main-funktio vastaa siitä, mikä päänäkymistä (aloitus, pelaus, lopetus) näkyy milloinkin. Asetukset näkymään pääsee aloitusnäkymästä vastaavasta luokasta ja tulostaulu näkymään pääsee lopetusnäkymästä vastaavasta luokasta.
 
@@ -48,7 +49,7 @@ sequenceDiagram
 ```
 Kaavio kuvaa main-funktion eri näkymiä vaihtelevaa silmukkaa. Kaaviossa esitetty silmukka alkaa viimeisen kohdan jälkeen alusta ja jatkuu, kunnes käyttäjä sulkee ohjelman.  
 
-
+## Pelilogiikka
 ### Pong pelilogiikan luokkakaavio :
 
 ```mermaid
@@ -59,9 +60,42 @@ classDiagram
     Pong -- Score
     Ball <|-- Collisions
     Paddle <|-- Collisions
-
-
 ```
+### Pong pelilogiikan sekvenssikaavio :
+```mermaid
+sequenceDiagram
+  participant main
+  participant pong
+  participant paddle
+  participant ball
+  participant collisions
+  participant score
+ 
+  main ->>pong: loop() 
+  pong ->>paddle: Paddle(color, x, y, width, height)
+  paddle -->>pong:  
+  pong ->>ball: Ball(color, x, y, radius)
+  ball -->>pong: 
+  pong ->>collisions: Collisions()
+  collisions -->>pong: 
+  pong ->>score: Score()
+  score -->>pong: 
+  
+  pong ->> pong: draw_screen()
+  pong ->> paddle: move()
+  paddle -->> pong:  
+  pong ->> ball: move()
+  ball -->> pong:  
+  pong ->> pong: päivitä koordinaatit
+  pong ->> collisions: ball_and_paddle()
+  collisions ->> score: add_point()
+  score -->> collisions:  
+  collisions -->>pong: True
+  pong ->> pong: events()
+  pong -->>main: jos silmukka katkeaa  
+```
+Kaavioon on valittu esimerkkitilanteeksi tilanne, jossa pallo törmää laudan kanssa. Muita mahdollisia tilanteita on pallon täymäys laudan sivun kanssa, jolloin collisions-luokkaa kutsutaan funktiolla ball_and_paddle_side, ja pallon törmäys näytön reunojen kanssa, jolloin funtio on joko ball_and_side tai ball_and_top, tälläisessä tilanteessa ei lisätä pistettä.
+
 
 ## Tulosten tallennus
 Kansio repositories luokka ScoreDatabase vastaa tulosten tallentamisesta. ScoreDatabase-luokan funktio *add_socre* tallentaa tietoa SQLite-tietokantaan, jonka tiedostonimi on highscores.db.
@@ -90,5 +124,5 @@ sequenceDiagram
   scoredatabase -->> scoreboard: lista viidestä parhaasta tuloksesta ja käyttäjänimestä
   scoreboard ->> scoreboard: draw_screen()
 ```
-Kaaviossa havainnoidaan vain tietojen tallennkusen kulkua, joten siinä ei oteta kantaa siihen millä päänäkymällä ollaan milläkin hetkellä.
+Kaaviossa havainnoidaan vain tietojen tallennuksen kulkua, joten siinä ei oteta kantaa siihen millä päänäkymällä ollaan milläkin hetkellä.
 
