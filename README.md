@@ -17,10 +17,10 @@ Asenna ensin riippuvuudet komennolla:
 `poerty install`
 
 Käynnistä peli komennolla:
-`poetry invoke start`
+`poetry run invoke start`
 
 Tietokannan voi tyhjentää komennolla:
-`poetry invoke empty-database`
+`poetry run invoke empty-database`
 
 ## Invoke komennot
 Pelin voi käynnistää komennolla: 
@@ -36,4 +36,4 @@ Pylint-tarkistuksen voi suorittaa komennolla:
 `poetry run invoke lint`
 
 Tietokannan voi tyhjentää komennolla:
-`poetry invoke empty-database`
+`poetry run invoke empty-database`
