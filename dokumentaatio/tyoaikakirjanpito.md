@@ -14,4 +14,7 @@ päivä | aika (h) | kuvaus
 22.4. | 4 | tulostaulun luominen, satunnaisten testien lisäys
 24.4. | 5 | koodin laadun parannus ja bugin korjauksen yritys 
 25.4. | 4 | tietokannan toiminnan parannus
-yhteensä |  40 |
+26.4. | 6 | asetusten ja asetusnäkymän luominen
+27.4. | 6 | testien kirjoitus, docstring-dokumentaatio, arkkitehtuurikuvauksen laajennus ja käyttöohjeiden kirjoitus
+
+yhteensä |  52 |
