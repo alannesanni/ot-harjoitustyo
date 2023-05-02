@@ -98,7 +98,7 @@ Kaavioon on valittu esimerkkitilanteeksi tilanne, jossa pallo törmää laudan k
 
 
 ## Tulosten tallennus
-Kansio repositories luokka ScoreDatabase vastaa tulosten tallentamisesta. ScoreDatabase-luokan funktio *add_socre* tallentaa tietoa SQLite-tietokantaan, jonka tiedostonimi on highscores.db.
+Kansio repositories luokka ScoreDatabase vastaa tulosten tallentamisesta. ScoreDatabase-luokan funktio *add_score* tallentaa tietoa SQLite-tietokantaan, jonka tiedostonimi on highscores.db.
 Tietokannassa on yksi taulu, joka sisältää sarakkeet käyttääjänimelle ja saadulle tulokselle.
 ScoreDatabase-luokassa on funktio *get_top_5*, joka palauttaa listana viisi parasta tulosta järjestyksessä parhaasta huonoimpaan. Tätä funktiota käytetään tulostaulun käyttöliittymästä vastaavassa ScoreBoard-luokassa.
 
