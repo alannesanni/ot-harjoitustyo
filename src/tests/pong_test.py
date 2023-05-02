@@ -9,7 +9,7 @@ from entities.settings import Settings
 
 class TestPong(unittest.TestCase):
     def setUp(self):
-        self.settings=Settings()
+        self.settings = Settings()
         self.paddle = Paddle((200, 200, 200), 5, 480, 120, 20)
         self.ball = Ball((200, 200, 200), 100, 100, 10)
         self.score = Score()

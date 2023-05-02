@@ -1,10 +1,11 @@
 import sys
+from random import randint
 import pygame
 from entities.paddle import Paddle
 from entities.ball import Ball
 from entities.collisions import Collisions
 from entities.score import Score
-from random import randint
+
 
 WHITE = (200, 200, 200)
 
@@ -16,6 +17,7 @@ class Pong:
             screen: Näyttö, jolle grafiikat piirretään
             settings: Peliin määritellyt asetukset
     """
+
     def __init__(self, screen, settings):
         """Luokan konstruktori, joka luo uuden pelin.
 
@@ -35,21 +37,23 @@ class Pong:
         """
         pygame.display.set_caption("Pong")
         self.screen = screen
-        self.settings=settings
+        self.settings = settings
         self.paddle_x = 5
         self.paddle_y = 480
-        self.paddle_width=120
+        self.paddle_width = 120
         self.paddle = Paddle(
             self.settings.paddle_color, self.paddle_x, self.paddle_y, self.paddle_width, 20)
-        self.ball_x = randint(15,650)
-        self.ball_y = randint(15,50)
-        self.ball = Ball(self.settings.ball_color, self.ball_x, self.ball_y, 10)
+        self.ball_x = randint(15, 650)
+        self.ball_y = randint(15, 50)
+        self.ball = Ball(self.settings.ball_color,
+                         self.ball_x, self.ball_y, 10)
         self.collision = Collisions()
         self.score = Score()
         self.font = pygame.font.SysFont("arial", 60, bold=True)
 
     def loop(self):
-        """Pelilogiikan pääsilmukka, joka kutsuu näytön piirto funktiota, päivittää pallon ja laudan koordinaatit ja tarkistaa törmäykset.
+        """Pelilogiikan pääsilmukka, joka kutsuu näytön piirto funktiota,
+        päivittää pallon ja laudan koordinaatit ja tarkistaa törmäykset.
         """
         clock = pygame.time.Clock()
         while True:
@@ -72,15 +76,15 @@ class Pong:
             if event.type == pygame.QUIT:
                 sys.exit()
 
-            if self.settings.mover=="mouse":
-                mouse_position= pygame.mouse.get_pos()
-                if mouse_position[0]<self.paddle_x:
+            if self.settings.mover == "mouse":
+                mouse_position = pygame.mouse.get_pos()
+                if mouse_position[0] < self.paddle_x:
                     self.paddle.mode = "left"
-                if mouse_position[0]>self.paddle_x+self.paddle_width:
-                    self.paddle.mode="right"
-                if self.paddle_x<mouse_position[0]<self.paddle_x+self.paddle_width:
-                    self.paddle.mode="still"
-            
+                if mouse_position[0] > self.paddle_x+self.paddle_width:
+                    self.paddle.mode = "right"
+                if self.paddle_x < mouse_position[0] < self.paddle_x+self.paddle_width:
+                    self.paddle.mode = "still"
+
             else:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_LEFT:
@@ -93,7 +97,9 @@ class Pong:
                     self.paddle.mode = "still"
 
     def check_collisions(self):
-        """Tarkistaa pallon törmäykset ja muuttaa pallon suuntaa niiden mukaan. Jos törmätään laudan sivuun, niin siirtää palloa sen hetkiseen suuntaan muutaman kerran, jotta vältetään bugi, jossa pallo jumittuu laudan sisälle.
+        """Tarkistaa pallon törmäykset ja muuttaa pallon suuntaa niiden mukaan. 
+        Jos törmätään laudan sivuun, niin siirtää palloa sen hetkiseen suuntaan muutaman kerran,
+        jotta vältetään bugi, jossa pallo jumittuu laudan sisälle.
         """
         if self.collision.ball_and_paddle(self.ball, self.paddle):
             self.ball.paddle_collision()

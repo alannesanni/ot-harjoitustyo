@@ -4,7 +4,8 @@ class Collisions:
     Attributes:
         ball: Pallo
         paddle: Lauta
-    """ 
+    """
+
     def ball_and_paddle(self, ball, paddle):
         """Tarkistaa törmääkö pallo laudan päälle.
 

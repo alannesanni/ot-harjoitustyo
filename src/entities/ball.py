@@ -7,6 +7,7 @@ class Ball:
         y_coord: Pallon y-koordinaatti
         radius: Pallon säde
     """
+
     def __init__(self, color, x_coord, y_coord, radius):
         """Luokan konstruktori, joka luo uuden pallon.
 

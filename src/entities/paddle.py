@@ -8,6 +8,7 @@ class Paddle:
         width: Laudan leveys
         height: Laudan korkeus
     """
+
     def __init__(self, color, x_coord, y_coord, width, height):
         """Luokan konstruktori, joka luo uuden laudan.
 

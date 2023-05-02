@@ -7,9 +7,9 @@ class ScoreBoard:
 
     Attributes:
         screen: Näyttö, jolle grafiikat piirretään
-        font: Fontti, jota piirtämisessä käytetään
         database_connection: Luo yhteyden tietokantaan
     """
+
     def __init__(self, screen, database_connection):
         """Luokan konstruktori joka alustaa käytetyt atribuutit
 

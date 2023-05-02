@@ -1,6 +1,7 @@
 class Score:
     """Luokka, joka vastaa pisteiden laskusta.
     """
+
     def __init__(self):
         """Luokan konstruktori, joka luo uuden pistelaskurin
 

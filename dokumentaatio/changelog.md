@@ -15,3 +15,8 @@
 - Luotu repositories kansio ja sinne tietokantaan liittyvät tiedostot
 - Luotu ScoreDatabase luokka, joka vastaa tietokannan luomisesta ja tietojen (käyttäjänimi ja pisteet) tallennuksesta
 - Luotu ScoreBoard luokka, joka vastaa tulostaulu näkymästä
+
+## Viikko 6
+- Muokattu koodia niin, että lautaa on mahdollista liikuttaa myös hiiren avulla
+- Luotu settings luokka, johon tallennetaan käyttäjänimi, pallon ja laudan värit sekä laudan liikutustapa
+- Luotu näkymä, josta käyttäjä voi muokata asetuksia

@@ -8,12 +8,14 @@ from repositories.database_connection import get_database_connection
 
 
 def main():
+    """Funktio, joka hallitsee sitä, mikä funktio näkyy milloinkin.
+    """
     pygame.init()
     width = 700
     height = 500
     connection = get_database_connection()
     ScoreDatabase(connection).create_database()
-    settings=Settings()
+    settings = Settings()
     while True:
         screen = pygame.display.set_mode((width, height))
         pong = Pong(screen, settings)
@@ -21,7 +23,8 @@ def main():
         gameover = GameOver(pong, screen, connection)
         start.loop()
         pong.loop()
-        ScoreDatabase(connection).add_score(settings.username, pong.score.points)
+        ScoreDatabase(connection).add_score(
+            settings.username, pong.score.points)
         gameover.loop()
 
 

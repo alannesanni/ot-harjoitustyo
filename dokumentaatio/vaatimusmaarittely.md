@@ -17,4 +17,5 @@ Yksinkertainen pong-peli, jossa pelaajan on laudan avulla  tarkoitus estää pal
 * Tulostaulu (tehty)
 * Mahdollisuus valita pelin vaikeustaso
 * Mahdollisuus pelata kaksinpelinä
-* Mahdollisuus pelata myös hiirellä
+* Mahdollisuus pelata myös hiirellä (tehty)
+* Mahdollisuus vaihtaa pallon ja laudan väriä (tehty)

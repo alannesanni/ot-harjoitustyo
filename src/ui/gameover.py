@@ -12,6 +12,7 @@ class GameOver:
         database_connection: Yhteys tietokantaan, jotta voidaan välittää se tulostaululle myöhemmin
 
     """
+
     def __init__(self, game, screen, database_connection):
         """Luokan konstruktori, joka luo pohjan lopetusnäytölle.
 
@@ -28,7 +29,7 @@ class GameOver:
         self.database_connection = database_connection
 
     def draw_screen(self):
-        """Piirtää ruudulle oikeat asiat.
+        """Piirtää ruudulle oikeat grafiikat.
         """
         pygame.display.set_caption("Pong")
         self.screen.fill((0, 0, 0))
