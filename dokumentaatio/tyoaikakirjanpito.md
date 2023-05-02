@@ -15,6 +15,7 @@ päivä | aika (h) | kuvaus
 24.4. | 5 | koodin laadun parannus ja bugin korjauksen yritys 
 25.4. | 4 | tietokannan toiminnan parannus
 26.4. | 6 | asetusten ja asetusnäkymän luominen
-27.4. | 6 | testien kirjoitus, docstring-dokumentaatio, arkkitehtuurikuvauksen laajennus ja käyttöohjeiden kirjoitus
+27.4. | 6 | testien kirjoitus, docstring-dokumentaation aloitus, arkkitehtuurikuvauksen laajennus ja käyttöohjeiden kirjoitus
+2.5. | 2 | docstring-dokumentaation jatko ja asetukset näkymän parannus
 
-yhteensä |  52 |
+yhteensä |  54 |
