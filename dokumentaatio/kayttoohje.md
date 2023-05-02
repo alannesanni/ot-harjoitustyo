@@ -6,10 +6,10 @@ Asenna ensin riippuvuudet komennolla:
 `poerty install`
 
 Käynnistä peli komennolla:
-`poetry invoke start`
+`poetry run invoke start`
 
 Tietokannan voi tyhjentää komennolla:
-`poetry invoke empty-database`
+`poetry run invoke empty-database`
 
 ## Pelin pelaaminen
 **Käynnistäessäsi pelin pääset pelin etusivulle.**
