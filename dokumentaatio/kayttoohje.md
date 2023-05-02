@@ -42,7 +42,9 @@ Lopetusnäytöllä sinulle näytetään saamasi pisteet.**
 *Näppäinkomennot:*
 
 *enter* : ohjaa sinut takaisin aloitusnäytölle
+
 *esc* : sulkee pelin 
+
 *space* : ohjaa sinut tulostaulunäytölle
 
 
