@@ -54,6 +54,7 @@ Lopetusnäytöllä sinulle näytetään saamasi pisteet.**
 *Näppäinkomennot:*
 
 *enter* : ohjaa sinut takaisin lopetusnäytölle
+
 *esc* : sulkee pelin
 
 
