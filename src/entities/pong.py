@@ -26,7 +26,6 @@ class Pong:
             settings: Peliin määritellyt asetukset
             paddle_x: Laudan aloitus x-koordinaatti, päivittyy pelin kuluessa
             paddle_y: Laudan y-koordinaatti
-            paddle_width: Laudan leveys
             paddle: Paddle-luokan avulla luotu lauta
             ball_x: Pallon aloitus x-koordinaatti, päivittyy pelin kuluessa
             ball_y: Pallon aloitus y-koordinaatti, päivittyy pelin kuluessa
@@ -40,13 +39,12 @@ class Pong:
         self.settings = settings
         self.paddle_x = 5
         self.paddle_y = 480
-        self.paddle_width = 120
         self.paddle = Paddle(
-            self.settings.paddle_color, self.paddle_x, self.paddle_y, self.paddle_width, 20)
+            self.settings.paddle_color, self.paddle_x, self.paddle_y, 20, self.settings)
         self.ball_x = randint(15, 650)
         self.ball_y = randint(15, 50)
         self.ball = Ball(self.settings.ball_color,
-                         self.ball_x, self.ball_y, 10)
+                         self.ball_x, self.ball_y, 10, self.settings)
         self.collision = Collisions()
         self.score = Score()
         self.font = pygame.font.SysFont("arial", 60, bold=True)
@@ -56,6 +54,7 @@ class Pong:
         päivittää pallon ja laudan koordinaatit ja tarkistaa törmäykset.
         """
         clock = pygame.time.Clock()
+
         while True:
             if self.ball_y >= 500:
                 break
@@ -80,9 +79,9 @@ class Pong:
                 mouse_position = pygame.mouse.get_pos()
                 if mouse_position[0] < self.paddle_x:
                     self.paddle.mode = "left"
-                if mouse_position[0] > self.paddle_x+self.paddle_width:
+                if mouse_position[0] > self.paddle_x+self.settings.paddle_width:
                     self.paddle.mode = "right"
-                if self.paddle_x < mouse_position[0] < self.paddle_x+self.paddle_width:
+                if self.paddle_x < mouse_position[0] < self.paddle_x+self.settings.paddle_width:
                     self.paddle.mode = "still"
 
             else:
@@ -123,7 +122,7 @@ class Pong:
         """Piirtää laudan ruudulle sen hetkisten koordinaattien mukaan.
         """
         pygame.draw.rect(self.screen, self.settings.paddle_color,
-                         (self.paddle_x, self.paddle_y, self.paddle_width, 20))
+                         (self.paddle_x, self.paddle_y, self.settings.paddle_width, 20))
 
     def draw_ball(self):
         """Piirtää pallon ruudulle sen hetkisten koordinaattien mukaan.

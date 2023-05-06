@@ -13,18 +13,18 @@ def main():
     pygame.init()
     width = 700
     height = 500
+    settings = Settings()
     connection = get_database_connection()
     ScoreDatabase(connection).create_database()
-    settings = Settings()
     while True:
         screen = pygame.display.set_mode((width, height))
         pong = Pong(screen, settings)
         start = Start(screen, settings)
-        gameover = GameOver(pong, screen, connection)
+        gameover = GameOver(pong, screen, connection, settings)
         start.loop()
         pong.loop()
         ScoreDatabase(connection).add_score(
-            settings.username, pong.score.points)
+            settings.username, pong.score.points, settings.level)
         gameover.loop()
 
 

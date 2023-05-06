@@ -10,8 +10,8 @@ from entities.settings import Settings
 class TestPong(unittest.TestCase):
     def setUp(self):
         self.settings = Settings()
-        self.paddle = Paddle((200, 200, 200), 5, 480, 120, 20)
-        self.ball = Ball((200, 200, 200), 100, 100, 10)
+        self.paddle = Paddle((200, 200, 200), 5, 480, 20, self.settings)
+        self.ball = Ball((200, 200, 200), 100, 100, 10, self.settings)
         self.score = Score()
         self.collisions = Collisions()
 
@@ -60,19 +60,19 @@ class TestPong(unittest.TestCase):
 
     def test_ball_paddle_collision(self):
         self.ball.paddle_collision()
-        self.assertEqual(self.ball.direction_y, -5)
+        self.assertEqual(self.settings.ball_direction_y, -5)
 
     def test_ball_paddle_side_collision(self):
         self.ball.paddle_side_collision()
-        self.assertEqual(self.ball.direction_x, -13)
+        self.assertEqual(self.settings.ball_direction_x, -13)
 
     def test_ball_side_wall_collision(self):
         self.ball.side_wall_collision()
-        self.assertEqual(self.ball.direction_x, -13)
+        self.assertEqual(self.settings.ball_direction_x, -13)
 
     def test_ball_top_wall_collision(self):
         self.ball.top_wall_collision()
-        self.assertEqual(self.ball.direction_y, -5)
+        self.assertEqual(self.settings.ball_direction_y, -5)
 
     def test_ball_get_coordinate(self):
         x = self.ball.get_coordinate("x")
@@ -102,6 +102,14 @@ class TestPong(unittest.TestCase):
 
     def test_collisions_ball_and_paddle_fasle_2(self):
         self.ball.x_coord = 250
+        self.ball.y_coord = 100
+        self.paddle.x_coord = 200
+        self.paddle.y_coord = 480
+        boolean = self.collisions.ball_and_paddle(self.ball, self.paddle)
+        self.assertEqual(boolean, False)
+
+    def test_collisions_ball_and_paddle_fasle_3(self):
+        self.ball.x_coord = 100
         self.ball.y_coord = 100
         self.paddle.x_coord = 200
         self.paddle.y_coord = 480
@@ -190,3 +198,24 @@ class TestPong(unittest.TestCase):
     def test_score_add_point(self):
         self.score.add_point()
         self.assertEqual(self.score.points, 1)
+
+    # Settings tests: 
+
+    def test_change_level_easy(self):
+        self.settings.change_level("easy")
+        self.assertEqual(self.settings.ball_direction_x, 12)
+        self.assertEqual(self.settings.ball_direction_y, 4)
+        self.assertEqual(self.settings.paddle_width, 200)
+
+    def test_change_level_medium(self):
+        self.settings.change_level("medium")
+        self.assertEqual(self.settings.ball_direction_x, 13)
+        self.assertEqual(self.settings.ball_direction_y, 5)
+        self.assertEqual(self.settings.paddle_width, 120)
+
+    def test_change_level_hard(self):
+        self.settings.change_level("hard")
+        self.assertEqual(self.settings.ball_direction_x, 17)
+        self.assertEqual(self.settings.ball_direction_y, 7)
+        self.assertEqual(self.settings.paddle_width, 70)
+

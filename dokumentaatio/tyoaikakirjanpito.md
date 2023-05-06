@@ -17,4 +17,6 @@ päivä | aika (h) | kuvaus
 26.4. | 6 | asetusten ja asetusnäkymän luominen
 27.4. | 6 | testien kirjoitus, docstring-dokumentaation aloitus, arkkitehtuurikuvauksen laajennus ja käyttöohjeiden kirjoitus
 2.5. | 2 | docstring-dokumentaation jatko ja asetukset näkymän parannus
-yhteensä |  54 |
+5.5. | 5 | vaikeustason muuttaminen ja näppäimet siihen etusivulle
+6.5. | 4 | tietojen tallennuksen muokkaus vaikeustasojen mukaan ja koodin laadun parannus
+yhteensä |  63 |

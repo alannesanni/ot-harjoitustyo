@@ -9,7 +9,7 @@ class Paddle:
         height: Laudan korkeus
     """
 
-    def __init__(self, color, x_coord, y_coord, width, height):
+    def __init__(self, color, x_coord, y_coord, height, settings):
         """Luokan konstruktori, joka luo uuden laudan.
 
         Args:
@@ -23,7 +23,8 @@ class Paddle:
         self.color = color
         self.x_coord = x_coord
         self.y_coord = y_coord
-        self.width = width
+        self.settings = settings
+        self.width = settings.paddle_width
         self.height = height
         self.mode = "still"
 
@@ -57,5 +58,5 @@ class Paddle:
         if self.x_coord <= 0:
             self.x_coord = 0
 
-        elif self.x_coord >= 580:
-            self.x_coord = 580
+        elif self.x_coord >= 700-self.settings.paddle_width:
+            self.x_coord = 700-self.settings.paddle_width

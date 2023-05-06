@@ -1,5 +1,8 @@
 import pygame
 from ui.settings_screen import SettingsScreen
+from ui.button import Button
+from entities.settings import Settings
+RED = (255, 20, 20)
 
 
 class Start:
@@ -30,6 +33,12 @@ class Start:
         self.font_small = pygame.font.SysFont("arial", 20, bold=True)
         self.username_rect = pygame.Rect(120, 10, 140, 32)
         self.login_fail = False
+        self.button_easy = Button(
+            self.screen, 70, 400, 150, 50, (200, 200, 200))
+        self.button_medium = Button(
+            self.screen, 270, 400, 150, 50, (200, 200, 200))
+        self.button_hard = Button(
+            self.screen, 470, 400, 150, 50, (200, 200, 200))
 
     def draw_screen(self):
         """Piiträä ruudulle oikeat grafiikat.
@@ -59,6 +68,21 @@ class Start:
         settings_text = self.font_small.render("settings", 0, (0, 0, 0))
         pygame.draw.rect(self.screen, (200, 200, 200), (580, 10, 110, 32))
         self.screen.blit(settings_text, (600, 12))
+        easy_text = self.font_medium.render("easy", 0, (0, 0, 0))
+        medium_text = self.font_medium.render("medium", 0, (0, 0, 0))
+        hard_text = self.font_medium.render("hard", 0, (0, 0, 0))
+        self.button_easy.draw_button()
+        self.button_medium.draw_button()
+        self.button_hard.draw_button()
+        self.screen.blit(easy_text, (105, 405))
+        self.screen.blit(medium_text, (285, 405))
+        self.screen.blit(hard_text, (505, 405))
+        if self.settings.level == "easy":
+            pygame.draw.rect(self.screen, RED, (70, 400, 150, 50), 3)
+        elif self.settings.level == "medium":
+            pygame.draw.rect(self.screen, RED, (270, 400, 150, 50), 3)
+        else:
+            pygame.draw.rect(self.screen, RED, (470, 400, 150, 50), 3)
         pygame.display.flip()
 
     def loop(self):
@@ -86,3 +110,12 @@ class Start:
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if 580 <= mouse[0] <= 690 and 10 <= mouse[1] <= 42:
                         SettingsScreen(self.screen, self.settings).loop()
+                    if self.button_easy.chech_if_button_pressed():
+                        self.settings.level = "easy"
+                        self.settings.change_level("easy")
+                    if self.button_medium.chech_if_button_pressed():
+                        self.settings.level = "medium"
+                        self.settings.change_level("medium")
+                    if self.button_hard.chech_if_button_pressed():
+                        self.settings.level = "hard"
+                        self.settings.change_level("hard")

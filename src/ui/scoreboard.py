@@ -10,7 +10,7 @@ class ScoreBoard:
         database_connection: Luo yhteyden tietokantaan
     """
 
-    def __init__(self, screen, database_connection):
+    def __init__(self, screen, database_connection, settings):
         """Luokan konstruktori joka alustaa käytetyt atribuutit
 
         Args:
@@ -22,13 +22,15 @@ class ScoreBoard:
         self.screen = screen
         self.font = pygame.font.SysFont("arial", 30, bold=True)
         self.db_connection = database_connection
-        self.top_list = ScoreDatabase(self.db_connection).get_top_5()
+        self.settings = settings
+        self.top_list = ScoreDatabase(
+            self.db_connection).get_top_5(self.settings.level)
 
     def draw_screen(self):
         """Piirtää näytölle tulostaulun grafiikat.
         """
         y_coord = 100
-        rank = 1
+        rank = 0
         pygame.display.set_caption("Pong")
         self.screen.fill((0, 0, 0))
         highscores_text = self.font.render(
@@ -38,12 +40,16 @@ class ScoreBoard:
         info_text = self.font.render(
             "enter: back   |   esc: quit", 0, (200, 200, 200))
         self.screen.blit(info_text, (20, 450))
+        previous = "first"
         for i in self.top_list:
+            if i[1] != previous[1] or previous == "first":
+                rank += 1
             score_text = self.font.render(
                 f"{rank}.  {i[0]}  {i[1]}", 0, (200, 200, 200))
             self.screen.blit(score_text, (50, y_coord))
             y_coord += 40
-            rank += 1
+
+            previous = i
         pygame.display.flip()
 
     def loop(self):

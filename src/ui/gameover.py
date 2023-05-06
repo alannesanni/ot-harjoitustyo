@@ -13,7 +13,7 @@ class GameOver:
 
     """
 
-    def __init__(self, game, screen, database_connection):
+    def __init__(self, game, screen, database_connection, settings):
         """Luokan konstruktori, joka luo pohjan lopetusnäytölle.
 
         Args:
@@ -27,6 +27,7 @@ class GameOver:
         self.font = pygame.font.SysFont("arial", 60, bold=True)
         self.font_small = pygame.font.SysFont("arial", 20, bold=True)
         self.database_connection = database_connection
+        self.settings = settings
 
     def draw_screen(self):
         """Piirtää ruudulle oikeat grafiikat.
@@ -63,4 +64,4 @@ class GameOver:
                         return
                     if event.key == pygame.K_SPACE:
                         ScoreBoard(
-                            self.screen, self.database_connection).loop()
+                            self.screen, self.database_connection, self.settings).loop()

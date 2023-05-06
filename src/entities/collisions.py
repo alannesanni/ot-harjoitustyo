@@ -1,9 +1,5 @@
 class Collisions:
     """Luokka, joka tarkistaa töymäykset
-
-    Attributes:
-        ball: Pallo
-        paddle: Lauta
     """
 
     def ball_and_paddle(self, ball, paddle):
@@ -16,9 +12,10 @@ class Collisions:
         Returns:
             True, jos pallo ja lauta törmäävät, muuten False
         """
-        if ball.x_coord + 10 > paddle.x_coord and ball.x_coord < paddle.x_coord + paddle.width:
-            if ball.y_coord + 10 >= paddle.y_coord:
-                return True
+        if ball.x_coord + 10 > paddle.x_coord:
+            if ball.x_coord-10 < paddle.x_coord + paddle.settings.paddle_width:
+                if ball.y_coord + 10 >= paddle.y_coord:
+                    return True
         return False
 
     def ball_and_paddle_side(self, ball, paddle):
@@ -32,9 +29,10 @@ class Collisions:
             True, jos pallo törmää laudan sivuun, muuten False
         """
         # right
-        if paddle.x_coord+paddle.width-15 <= ball.x_coord-10 <= paddle.x_coord + paddle.width+15:
-            if ball.y_coord + 10 >= paddle.y_coord:
-                return True
+        if paddle.x_coord+paddle.settings.paddle_width-15 <= ball.x_coord-10:
+            if ball.x_coord-10 <= paddle.x_coord + paddle.settings.paddle_width+15:
+                if ball.y_coord + 10 >= paddle.y_coord:
+                    return True
         # left
         if paddle.x_coord-15 <= ball.x_coord+10 <= paddle.x_coord+15:
             if ball.y_coord + 10 >= paddle.y_coord:

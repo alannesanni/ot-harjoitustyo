@@ -14,7 +14,7 @@ Tietokannan voi tyhjentää komennolla:
 ## Pelin pelaaminen
 **Käynnistäessäsi pelin pääset pelin etusivulle.**
 **Etusivulla voit kirjoittaa käyttäjänimesi, jonka perusteella tuloksesi tallennetaan. 
-Klikkaamalla hiirellä *settings* nappia pääset muuttamaan pelin asetuksia.**
+Klikkaamalla hiirellä *settings* nappia pääset muuttamaan pelin asetuksia. Voit valita pelin vaikeustason klikkaamalla hiirellä haluamaasi vaikeustasoa.**
 
 *Näppäinkomennot:*
 
