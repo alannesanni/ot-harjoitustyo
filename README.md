@@ -12,6 +12,7 @@ Pelaajan on laudan avulla tarkoitus estää palloa osumasta ruudun alareunaan. L
 - [Changelog](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 - [Työaikakirjanpito](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 - [Arkkitehtuuri](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+- [Testausdokumentti](https://github.com/alannesanni/ot-harjoitustyo/blob/master/dokumentaatio/testausdokumentti.md)
 
 ## Pelin pelaaminen
 Asenna ensin riippuvuudet komennolla:
