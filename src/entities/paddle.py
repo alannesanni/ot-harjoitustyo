@@ -5,8 +5,8 @@ class Paddle:
         color: Laudan väri
         x_coord: Laudan x-koordinaatti
         y_coord: Laudan y-koordinaatti
-        width: Laudan leveys
         height: Laudan korkeus
+        settings: Asetukset, joista haetaan laudan leveys
     """
 
     def __init__(self, color, x_coord, y_coord, height, settings):
@@ -16,9 +16,8 @@ class Paddle:
             color: Laudan väri
             x_coord: Laudan x-koordinaatti
             y_coord: Laudan y-koordinaatti
-            width: Laudan leveys
             height: Laudan korkeus
-            mode: Laudan liikkumisen tila
+            settings: Asetukset, joista haetaan laudan leveys
         """
         self.color = color
         self.x_coord = x_coord
