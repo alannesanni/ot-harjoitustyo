@@ -19,4 +19,5 @@ päivä | aika (h) | kuvaus
 2.5. | 2 | docstring-dokumentaation jatko ja asetukset näkymän parannus
 5.5. | 5 | vaikeustason muuttaminen ja näppäimet siihen etusivulle
 6.5. | 4 | tietojen tallennuksen muokkaus vaikeustasojen mukaan ja koodin laadun parannus
-yhteensä |  63 |
+7.5. | 3 | ajan lisäys näytölle ja pieniä korjauksia koodiin
+yhteensä |  66 |

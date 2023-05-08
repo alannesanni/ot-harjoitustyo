@@ -2,6 +2,8 @@ import pygame
 from ui.settings_screen import SettingsScreen
 from ui.button import Button
 from entities.settings import Settings
+from ui.date import Date
+
 RED = (255, 20, 20)
 
 
@@ -77,6 +79,7 @@ class Start:
         self.screen.blit(easy_text, (105, 405))
         self.screen.blit(medium_text, (285, 405))
         self.screen.blit(hard_text, (505, 405))
+        Date().draw_date(self.screen)
         if self.settings.level == "easy":
             pygame.draw.rect(self.screen, RED, (70, 400, 150, 50), 3)
         elif self.settings.level == "medium":
@@ -104,7 +107,8 @@ class Start:
                     elif event.key == pygame.K_BACKSPACE:
                         self.settings.username = self.settings.username[:-1]
                     else:
-                        self.settings.username += event.unicode
+                        if len(self.settings.username)<21:
+                            self.settings.username += event.unicode
 
                 mouse = pygame.mouse.get_pos()
                 if event.type == pygame.MOUSEBUTTONDOWN:

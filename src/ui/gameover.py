@@ -1,7 +1,9 @@
 import pygame
 from ui.scoreboard import ScoreBoard
 from repositories.score_repository import ScoreDatabase
+from ui.date import Date
 
+WHITE=(200,200,200)
 
 class GameOver:
     """Luokka, joka vastaa lopetusnäytön käyttöliittymästä.
@@ -35,10 +37,10 @@ class GameOver:
         pygame.display.set_caption("Pong")
         self.screen.fill((0, 0, 0))
         end_score = self.font.render(
-            "Score: " + str(self.game.score.points), 0, (200, 200, 200))
-        game_over = self.font.render("GAME OVER", 0, (200, 200, 200))
+            "Score: " + str(self.game.score.points), 0, WHITE)
+        game_over = self.font.render("GAME OVER", 0, WHITE)
         info_text = self.font_small.render(
-            "space: highscores   |   enter: new game   |   esc: quit", 0, (200, 200, 200))
+            "space: highscores   |   enter: new game   |   esc: quit", 0, WHITE)
         screen_width = self.screen.get_width()
         end_score_width = end_score.get_width()
         game_over_width = game_over.get_width()
@@ -47,6 +49,7 @@ class GameOver:
         self.screen.blit(
             end_score, ((screen_width//2)-(end_score_width//2), 250))
         self.screen.blit(info_text, (20, 450))
+        Date().draw_date(self.screen)
         pygame.display.flip()
 
     def loop(self):

@@ -134,7 +134,7 @@ class Pong:
         """Piirtää pisteiden määrän ruudun vasempaan yläreunaan.
         """
         points_text = self.font.render(
-            str(self.score.points), 0, (200, 200, 200))
+            str(self.score.points), 0, WHITE)
         self.screen.blit(points_text, (20, 5))
 
     def draw_screen(self):

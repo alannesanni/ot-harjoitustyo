@@ -1,6 +1,8 @@
 from repositories.score_repository import ScoreDatabase
 import pygame
+from ui.date import Date
 
+WHITE=(200,200,200)
 
 class ScoreBoard:
     """Luokka, joka vastaa tulostaulun käyttöliittymästä.
@@ -34,22 +36,23 @@ class ScoreBoard:
         pygame.display.set_caption("Pong")
         self.screen.fill((0, 0, 0))
         highscores_text = self.font.render(
-            "Highscores: ", 0, (200, 200, 200))
+            "Highscores: ", 0, WHITE)
         self.screen.blit(
             highscores_text, (50, 50))
         info_text = self.font.render(
-            "enter: back   |   esc: quit", 0, (200, 200, 200))
+            "enter: back   |   esc: quit", 0, WHITE)
         self.screen.blit(info_text, (20, 450))
         previous = "first"
         for i in self.top_list:
             if i[1] != previous[1] or previous == "first":
                 rank += 1
             score_text = self.font.render(
-                f"{rank}.  {i[0]}  {i[1]}", 0, (200, 200, 200))
+                f"{rank}.  {i[0]}  {i[1]}", 0, WHITE)
             self.screen.blit(score_text, (50, y_coord))
             y_coord += 40
 
             previous = i
+        Date().draw_date(self.screen)
         pygame.display.flip()
 
     def loop(self):

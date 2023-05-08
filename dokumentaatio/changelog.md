@@ -25,3 +25,4 @@
 - Lisätty peliin kolme eri vaikeustasoa
 - Lisätty aloitusnäytölle painikkeet, joista vaikeustason voi valita
 - Muokattu tietojen tallennusta niin, että jokaisen vaikeustason tulokset tallennetaan omaan tauluunsa
+- Lisätty näyön oikeaan alareunaan kellonaika ja päivä
