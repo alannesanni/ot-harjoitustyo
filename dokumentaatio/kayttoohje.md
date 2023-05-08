@@ -13,23 +13,25 @@ Tietokannan voi tyhjentää komennolla:
 
 ## Pelin pelaaminen
 **Käynnistäessäsi pelin pääset pelin etusivulle.**
-**Etusivulla voit kirjoittaa käyttäjänimesi, jonka perusteella tuloksesi tallennetaan. 
-Klikkaamalla hiirellä *settings* nappia pääset muuttamaan pelin asetuksia. Voit valita pelin vaikeustason klikkaamalla hiirellä haluamaasi vaikeustasoa.**
+**Etusivulla voit kirjoittaa käyttäjänimesi, jonka perusteella tuloksesi tallennetaan.**
 
-*Näppäinkomennot:*
+**Klikkaamalla hiirellä *settings* nappia pääset muuttamaan pelin asetuksia. 
+Voit valita pelin vaikeustason klikkaamalla hiirellä haluamaasi vaikeustasoa.**
 
-*esc*: sulkee pelin
+*Näppäinkomennot :*
 
-*enter*: aloittaa pelin
+*esc* : sulkee pelin
+
+*enter* : aloittaa pelin
 
 
 
 **Asetukset sivulla voit muuttaa pallon ja laudan värejä klikkaamalla hiirellä haluamaasi väriä.
 Myös laudan ohjaustapaa voi muuttaa samalla tavalla.**
 
-*Näppäinkomennot:*
+*Näppäinkomennot :*
 
-*enter*: ohjaa sinut takaisin etusivulle
+*enter* : ohjaa sinut takaisin etusivulle
 
 
 
@@ -39,7 +41,7 @@ Saat pisteen aina kun osut laudalla palloon.**
 **Jos pallo pääsee tippumaan alareunaan, häviät pelin ja siirrty lopetusnäytölle.
 Lopetusnäytöllä sinulle näytetään saamasi pisteet.**
 
-*Näppäinkomennot:*
+*Näppäinkomennot :*
 
 *enter* : ohjaa sinut takaisin aloitusnäytölle
 
@@ -49,9 +51,9 @@ Lopetusnäytöllä sinulle näytetään saamasi pisteet.**
 
 
 
-**Tulostaulunäytöllä näet 5 parasta suoritusta pelissä.**
+**Tulostaulunäytöllä näet 5 parasta suoritusta pelaamallasi vaikeustasolla.**
 
-*Näppäinkomennot:*
+*Näppäinkomennot :*
 
 *enter* : ohjaa sinut takaisin lopetusnäytölle
 
