@@ -3,4 +3,4 @@ __pycache__
 htmlcov
 .vscode
 highscore.db
-highsocre_test.db
+highscore_test.db
