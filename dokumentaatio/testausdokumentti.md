@@ -7,7 +7,7 @@ Ohjelmaa on testattu automatisoiduilla unittesteillä ja manuaalisella testaukse
 ### Testikattavuus
 Testikattavuudesta on jätetty pois käyttöliittymää käsittelevä koodi. Pelin testauksen haaraumakattavuus on 70%. 
 
-![image](https://user-images.githubusercontent.com/128046458/236689280-803dfad0-967c-48b9-a7a5-6103988799b1.png)
+![image](https://github.com/alannesanni/ot-harjoitustyo/assets/128046458/e2b29d8e-a3dd-4cea-aad4-a72ce81ff0fd)
 
 
 *Pong.py* tiedosto sisältää sovelluslogiikkaa ja pelausnäkymän käyttöliittymää hallinnoivan koodin, joten sitä ei ole testattu automatisoiduilla testeillä. 
