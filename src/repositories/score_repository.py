@@ -74,6 +74,8 @@ class ScoreDatabase:
 
         return self.database_connection.execute(get_all).fetchall()
 
+
+
     def get_top_5(self, level):
         """Hakee tietokannasta viisi parasta tulosta.
 
