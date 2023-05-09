@@ -30,16 +30,22 @@ class Settings:
             level: vaikeustaso, jolle halutaan vaihtaa
         """
         if level == "easy":
-            self.ball_direction_x = 12
-            self.ball_direction_y = 4
-            self.paddle_width = 200
+            self.set_level(12, 4, 200)
 
         if level == "medium":
-            self.ball_direction_x = 13
-            self.ball_direction_y = 5
-            self.paddle_width = 120
+            self.set_level(13, 5, 120)
 
         if level == "hard":
-            self.ball_direction_x = 17
-            self.ball_direction_y = 7
-            self.paddle_width = 70
+            self.set_level(17, 7, 70)
+
+    def set_level(self, ball_x_dir, ball_y_dir, paddle_width):
+        """Asettaa halutut arvot asetuksiin.
+
+        Args:
+            x: Pallon x-akselilla kulkema matka
+            y: Pallon y-akselilla kulkema matka
+            w: Laudan leveys
+        """
+        self.ball_direction_x = ball_x_dir
+        self.ball_direction_y = ball_y_dir
+        self.paddle_width = paddle_width

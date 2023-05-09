@@ -2,7 +2,9 @@ from repositories.score_repository import ScoreDatabase
 import pygame
 from ui.date import Date
 
-WHITE=(200,200,200)
+WHITE = (200, 200, 200)
+BLACK = (0, 0, 0)
+
 
 class ScoreBoard:
     """Luokka, joka vastaa tulostaulun käyttöliittymästä.
@@ -34,7 +36,7 @@ class ScoreBoard:
         y_coord = 100
         rank = 0
         pygame.display.set_caption("Pong")
-        self.screen.fill((0, 0, 0))
+        self.screen.fill(BLACK)
         highscores_text = self.font.render(
             "Highscores: ", 0, WHITE)
         self.screen.blit(

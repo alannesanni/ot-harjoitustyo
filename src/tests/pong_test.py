@@ -3,7 +3,7 @@ from entities.pong import Pong
 from entities.paddle import Paddle
 from entities.ball import Ball
 from entities.score import Score
-from entities.collisions import Collisions
+from entities.collisions import ball_and_paddle, ball_and_paddle_side, ball_and_side, ball_and_top
 from entities.settings import Settings
 
 
@@ -13,7 +13,6 @@ class TestPong(unittest.TestCase):
         self.paddle = Paddle((200, 200, 200), 5, 480, 20, self.settings)
         self.ball = Ball((200, 200, 200), 100, 100, 10, self.settings)
         self.score = Score()
-        self.collisions = Collisions()
 
     # Paddle tests:
     def test_paddle_still(self):
@@ -89,7 +88,7 @@ class TestPong(unittest.TestCase):
         self.ball.y_coord = 475
         self.paddle.x_coord = 200
         self.paddle.y_coord = 480
-        boolean = self.collisions.ball_and_paddle(self.ball, self.paddle)
+        boolean = ball_and_paddle(self.ball, self.paddle)
         self.assertEqual(boolean, True)
 
     def test_collisions_ball_and_paddle_fasle_1(self):
@@ -97,7 +96,7 @@ class TestPong(unittest.TestCase):
         self.ball.y_coord = 100
         self.paddle.x_coord = 200
         self.paddle.y_coord = 480
-        boolean = self.collisions.ball_and_paddle(self.ball, self.paddle)
+        boolean = ball_and_paddle(self.ball, self.paddle)
         self.assertEqual(boolean, False)
 
     def test_collisions_ball_and_paddle_fasle_2(self):
@@ -105,7 +104,7 @@ class TestPong(unittest.TestCase):
         self.ball.y_coord = 100
         self.paddle.x_coord = 200
         self.paddle.y_coord = 480
-        boolean = self.collisions.ball_and_paddle(self.ball, self.paddle)
+        boolean = ball_and_paddle(self.ball, self.paddle)
         self.assertEqual(boolean, False)
 
     def test_collisions_ball_and_paddle_fasle_3(self):
@@ -113,7 +112,7 @@ class TestPong(unittest.TestCase):
         self.ball.y_coord = 100
         self.paddle.x_coord = 200
         self.paddle.y_coord = 480
-        boolean = self.collisions.ball_and_paddle(self.ball, self.paddle)
+        boolean = ball_and_paddle(self.ball, self.paddle)
         self.assertEqual(boolean, False)
 
     def test_collisions_ball_and_paddle_left_side_true(self):
@@ -121,7 +120,7 @@ class TestPong(unittest.TestCase):
         self.ball.y_coord = 475
         self.paddle.x_coord = 200
         self.paddle.y_coord = 480
-        boolean = self.collisions.ball_and_paddle_side(self.ball, self.paddle)
+        boolean = ball_and_paddle_side(self.ball, self.paddle)
         self.assertEqual(boolean, True)
 
     def test_collisions_ball_and_paddle_right_side_true(self):
@@ -129,7 +128,7 @@ class TestPong(unittest.TestCase):
         self.ball.y_coord = 475
         self.paddle.x_coord = 200
         self.paddle.y_coord = 480
-        boolean = self.collisions.ball_and_paddle_side(self.ball, self.paddle)
+        boolean = ball_and_paddle_side(self.ball, self.paddle)
         self.assertEqual(boolean, True)
 
     def test_collisions_ball_and_paddle_right_side_fasle_1(self):
@@ -137,7 +136,7 @@ class TestPong(unittest.TestCase):
         self.ball.y_coord = 100
         self.paddle.x_coord = 200
         self.paddle.y_coord = 480
-        boolean = self.collisions.ball_and_paddle_side(self.ball, self.paddle)
+        boolean = ball_and_paddle_side(self.ball, self.paddle)
         self.assertEqual(boolean, False)
 
     def test_collisions_ball_and_paddle_right_side_fasle_2(self):
@@ -145,7 +144,7 @@ class TestPong(unittest.TestCase):
         self.ball.y_coord = 100
         self.paddle.x_coord = 200
         self.paddle.y_coord = 480
-        boolean = self.collisions.ball_and_paddle_side(self.ball, self.paddle)
+        boolean = ball_and_paddle_side(self.ball, self.paddle)
         self.assertEqual(boolean, False)
 
     def test_collisions_ball_and_paddle_left_side_fasle_1(self):
@@ -153,7 +152,7 @@ class TestPong(unittest.TestCase):
         self.ball.y_coord = 100
         self.paddle.x_coord = 200
         self.paddle.y_coord = 480
-        boolean = self.collisions.ball_and_paddle_side(self.ball, self.paddle)
+        boolean = ball_and_paddle_side(self.ball, self.paddle)
         self.assertEqual(boolean, False)
 
     def test_collisions_ball_and_paddle_left_side_fasle_2(self):
@@ -161,37 +160,37 @@ class TestPong(unittest.TestCase):
         self.ball.y_coord = 100
         self.paddle.x_coord = 200
         self.paddle.y_coord = 480
-        boolean = self.collisions.ball_and_paddle_side(self.ball, self.paddle)
+        boolean = ball_and_paddle_side(self.ball, self.paddle)
         self.assertEqual(boolean, False)
 
     def test_collisions_ball_and__left_side_true(self):
         self.ball.x_coord = 10
         self.ball.y_coord = 300
-        boolean = self.collisions.ball_and_side(self.ball)
+        boolean = ball_and_side(self.ball)
         self.assertEqual(boolean, True)
 
     def test_collisions_ball_and_right_side_true(self):
         self.ball.x_coord = 700
         self.ball.y_coord = 300
-        boolean = self.collisions.ball_and_side(self.ball)
+        boolean = ball_and_side(self.ball)
         self.assertEqual(boolean, True)
 
     def test_collisions_ball_and_side_fasle(self):
         self.ball.x_coord = 250
         self.ball.y_coord = 300
-        boolean = self.collisions.ball_and_side(self.ball)
+        boolean = ball_and_side(self.ball)
         self.assertEqual(boolean, False)
 
     def test_collisions_ball_and_top_true(self):
         self.ball.x_coord = 700
         self.ball.y_coord = 10
-        boolean = self.collisions.ball_and_top(self.ball)
+        boolean = ball_and_top(self.ball)
         self.assertEqual(boolean, True)
 
     def test_collisions_ball_and_top_fasle(self):
         self.ball.x_coord = 250
         self.ball.y_coord = 300
-        boolean = self.collisions.ball_and_top(self.ball)
+        boolean = ball_and_top(self.ball)
         self.assertEqual(boolean, False)
 
     # Score tests:
@@ -199,7 +198,7 @@ class TestPong(unittest.TestCase):
         self.score.add_point()
         self.assertEqual(self.score.points, 1)
 
-    # Settings tests: 
+    # Settings tests:
 
     def test_change_level_easy(self):
         self.settings.change_level("easy")
@@ -218,4 +217,3 @@ class TestPong(unittest.TestCase):
         self.assertEqual(self.settings.ball_direction_x, 17)
         self.assertEqual(self.settings.ball_direction_y, 7)
         self.assertEqual(self.settings.paddle_width, 70)
-

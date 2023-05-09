@@ -2,10 +2,12 @@ import pygame
 from ui.button import Button
 from ui.date import Date
 RED = (255, 20, 20)
-WHITE = (200,200,200)
-PINK =(255, 151, 231)
+WHITE = (200, 200, 200)
+PINK = (255, 151, 231)
 YELLOW = (250, 238, 108)
-BLACK = (0,0,0)
+BLACK = (0, 0, 0)
+
+
 class SettingsScreen:
     """Luokka, joka vastaa asetukset näytöstä.
 

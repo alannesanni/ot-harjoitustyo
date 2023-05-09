@@ -25,16 +25,16 @@ class TestScoreRepository(unittest.TestCase):
         ScoreDatabase(connection).create_database()
         ScoreDatabase(connection).add_score(self.settings.username, 1, "easy")
         all_list = ScoreDatabase(connection).get_all("easy")
-        self.assertEqual(all_list, [("test", 1)])        
+        self.assertEqual(all_list, [("test", 1)])
 
     def test_add_score_medium(self):
         empty_db()
         connection = get_database_connection_test()
         ScoreDatabase(connection).create_database()
-        ScoreDatabase(connection).add_score(self.settings.username, 1, "medium")
+        ScoreDatabase(connection).add_score(
+            self.settings.username, 1, "medium")
         all_list = ScoreDatabase(connection).get_all("medium")
         self.assertEqual(all_list, [("test", 1)])
-
 
     def test_add_score_hard(self):
         empty_db()
@@ -62,7 +62,8 @@ class TestScoreRepository(unittest.TestCase):
         empty_db()
         connection = get_database_connection_test()
         ScoreDatabase(connection).create_database()
-        ScoreDatabase(connection).add_score(self.settings.username, 1, "medium")
+        ScoreDatabase(connection).add_score(
+            self.settings.username, 1, "medium")
         ScoreDatabase(connection).add_score("test2", 2, "medium")
         ScoreDatabase(connection).add_score("test3", 3, "medium")
         ScoreDatabase(connection).add_score("test4", 4, "medium")
@@ -71,7 +72,7 @@ class TestScoreRepository(unittest.TestCase):
         top_list = ScoreDatabase(connection).get_top_5("medium")
         self.assertEqual(
             top_list, [("test5", 5), ("test4", 4), ("test3", 3), ("test2", 2), ("test", 1)])
-        
+
     def test_get_top_5_hard(self):
         empty_db()
         connection = get_database_connection_test()

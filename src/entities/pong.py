@@ -3,11 +3,12 @@ from random import randint
 import pygame
 from entities.paddle import Paddle
 from entities.ball import Ball
-from entities.collisions import Collisions
+from entities.collisions import ball_and_paddle, ball_and_paddle_side, ball_and_side, ball_and_top
 from entities.score import Score
 
 
 WHITE = (200, 200, 200)
+BLACK = (0, 0, 0)
 
 
 class Pong:
@@ -45,9 +46,7 @@ class Pong:
         self.ball_y = randint(15, 50)
         self.ball = Ball(self.settings.ball_color,
                          self.ball_x, self.ball_y, 10, self.settings)
-        self.collision = Collisions()
         self.score = Score()
-        self.font = pygame.font.SysFont("arial", 60, bold=True)
 
     def loop(self):
         """Pelilogiikan pääsilmukka, joka kutsuu näytön piirto funktiota,
@@ -58,13 +57,13 @@ class Pong:
         while True:
             if self.ball_y >= 500:
                 break
-            self.draw_screen()
             self.paddle.move()
             self.ball.move()
             self.ball_x = self.ball.get_coordinate("x")
             self.ball_y = self.ball.get_coordinate("y")
             self.paddle_x = self.paddle.get_coordinate("x")
             self.check_collisions()
+            self.draw_screen()
             self.events()
             clock.tick(30)
 
@@ -100,10 +99,10 @@ class Pong:
         Jos törmätään laudan sivuun, niin siirtää palloa sen hetkiseen suuntaan muutaman kerran,
         jotta vältetään bugi, jossa pallo jumittuu laudan sisälle.
         """
-        if self.collision.ball_and_paddle(self.ball, self.paddle):
+        if ball_and_paddle(self.ball, self.paddle):
             self.ball.paddle_collision()
             self.score.add_point()
-        if self.collision.ball_and_paddle_side(self.ball, self.paddle):
+        if ball_and_paddle_side(self.ball, self.paddle):
             self.ball.paddle_side_collision()
             self.score.add_point()
             for _ in range(4):
@@ -112,10 +111,10 @@ class Pong:
                 self.ball_y = self.ball.get_coordinate("y")
                 self.draw_ball()
 
-        if self.collision.ball_and_side(self.ball):
+        if ball_and_side(self.ball):
             self.ball.side_wall_collision()
 
-        if self.collision.ball_and_top(self.ball):
+        if ball_and_top(self.ball):
             self.ball.top_wall_collision()
 
     def draw_paddle(self):
@@ -133,14 +132,15 @@ class Pong:
     def draw_score(self):
         """Piirtää pisteiden määrän ruudun vasempaan yläreunaan.
         """
-        points_text = self.font.render(
+        font = pygame.font.SysFont("arial", 60, bold=True)
+        points_text = font.render(
             str(self.score.points), 0, WHITE)
         self.screen.blit(points_text, (20, 5))
 
     def draw_screen(self):
         """Piirtää näytölle pisteet, laudan ja pallon.
         """
-        self.screen.fill((0, 0, 0))
+        self.screen.fill(BLACK)
         self.draw_score()
         self.draw_paddle()
         self.draw_ball()

@@ -1,10 +1,10 @@
 import pygame
 from ui.settings_screen import SettingsScreen
 from ui.button import Button
-from entities.settings import Settings
 from ui.date import Date
 
 RED = (255, 20, 20)
+WHITE = (200, 200, 200)
 
 
 class Start:
@@ -36,30 +36,30 @@ class Start:
         self.username_rect = pygame.Rect(120, 10, 140, 32)
         self.login_fail = False
         self.button_easy = Button(
-            self.screen, 70, 400, 150, 50, (200, 200, 200))
+            self.screen, 70, 400, 150, 50, WHITE)
         self.button_medium = Button(
-            self.screen, 270, 400, 150, 50, (200, 200, 200))
+            self.screen, 270, 400, 150, 50, WHITE)
         self.button_hard = Button(
-            self.screen, 470, 400, 150, 50, (200, 200, 200))
+            self.screen, 470, 400, 150, 50, WHITE)
 
     def draw_screen(self):
         """Piiträä ruudulle oikeat grafiikat.
         """
         pygame.display.set_caption("Pong")
         self.screen.fill((0, 0, 0))
-        text1 = self.font.render("Pong", 0, (200, 200, 200))
+        text1 = self.font.render("Pong", 0, WHITE)
         text2 = self.font_medium.render(
-            "write username and press enter to start", 0, (200, 200, 200))
-        text3 = self.font_small.render("username:", 0, (200, 200, 200))
+            "write username and press enter to start", 0, WHITE)
+        text3 = self.font_small.render("username:", 0, WHITE)
         username_text = self.font_small.render(
-            self.settings.username, 0, (200, 200, 200))
+            self.settings.username, 0, WHITE)
         screen_width = self.screen.get_width()
         text1_width = text1.get_width()
         text2_width = text2.get_width()
         if self.login_fail == True and self.settings.username == "":
             pygame.draw.rect(self.screen, (255, 20, 20), self.username_rect, 2)
         else:
-            pygame.draw.rect(self.screen, (200, 200, 200),
+            pygame.draw.rect(self.screen, WHITE,
                              self.username_rect, 2)
         self.screen.blit(text1, ((screen_width//2)-(text1_width//2), 150))
         self.screen.blit(text2, ((screen_width//2)-(text2_width//2), 250))
@@ -68,7 +68,7 @@ class Start:
             username_text, ((self.username_rect.x + 5), self.username_rect.y + 5))
         self.username_rect.w = max(100, username_text.get_width() + 10)
         settings_text = self.font_small.render("settings", 0, (0, 0, 0))
-        pygame.draw.rect(self.screen, (200, 200, 200), (580, 10, 110, 32))
+        pygame.draw.rect(self.screen, WHITE, (580, 10, 110, 32))
         self.screen.blit(settings_text, (600, 12))
         easy_text = self.font_medium.render("easy", 0, (0, 0, 0))
         medium_text = self.font_medium.render("medium", 0, (0, 0, 0))
@@ -107,7 +107,7 @@ class Start:
                     elif event.key == pygame.K_BACKSPACE:
                         self.settings.username = self.settings.username[:-1]
                     else:
-                        if len(self.settings.username)<21:
+                        if len(self.settings.username) < 21:
                             self.settings.username += event.unicode
 
                 mouse = pygame.mouse.get_pos()

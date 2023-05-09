@@ -3,7 +3,8 @@ from ui.scoreboard import ScoreBoard
 from repositories.score_repository import ScoreDatabase
 from ui.date import Date
 
-WHITE=(200,200,200)
+WHITE = (200, 200, 200)
+
 
 class GameOver:
     """Luokka, joka vastaa lopetusnäytön käyttöliittymästä.
