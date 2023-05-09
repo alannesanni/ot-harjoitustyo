@@ -31,9 +31,8 @@ class Pong:
             ball_x: Pallon aloitus x-koordinaatti, päivittyy pelin kuluessa
             ball_y: Pallon aloitus y-koordinaatti, päivittyy pelin kuluessa
             ball: Ball-luokan avulla luotu pallo
-            collisions: Yhdistää mukaan Collisions-luokan
             score: Yhdistää mukaan Score-luokan
-            font: Teksteissä käytettävä fontti
+
         """
         pygame.display.set_caption("Pong")
         self.screen = screen

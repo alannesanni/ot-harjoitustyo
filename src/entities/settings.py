@@ -1,11 +1,7 @@
 class Settings:
     """Luokka, joka ylläpitää pelin muutettavia asetuksia.
-    """
 
-    def __init__(self):
-        """Luokan konstruktori, joka asettaa pelin oletusasetukset.
-
-        Args:
+    Attributes:
             mover: Tapa, jolla lautaa liikutetaan
             ball_color: Pallon väri
             paddle_color: Laudan väri
@@ -13,6 +9,11 @@ class Settings:
             ball_direction_x: pallon x suunta
             ball_direction_y: pallon y suunta
             paddle_width: laudan leveys
+
+    """
+
+    def __init__(self):
+        """Luokan konstruktori, joka asettaa pelin oletusasetukset.
         """
         self.mover = "keyboard"
         self.ball_color = (200, 200, 200)

@@ -12,8 +12,10 @@ class GameOver:
     Attributes:
         game: Peli, joka on juuri hävitty
         screen: Näyttö, johon teksti lisätään
+        font: Iso fontti
+        font_small: Pieni fontti
         database_connection: Yhteys tietokantaan, jotta voidaan välittää se tulostaululle myöhemmin
-
+        settings: Asetukset
     """
 
     def __init__(self, game, screen, database_connection, settings):
@@ -23,7 +25,7 @@ class GameOver:
             game: Peli, joka on juuri hävitty
             screen: Näyttö, johon teksti lisätään
             database_connection: Yhteys tietokantaan, jotta voidaan välittää se tulostaululle myöhemmin
-
+            settings: Asetukset, jotka välitetään tulostaulu-luokalle
         """
         self.game = game
         self.screen = screen

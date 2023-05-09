@@ -10,8 +10,11 @@ class ScoreBoard:
     """Luokka, joka vastaa tulostaulun käyttöliittymästä.
 
     Attributes:
-        screen: Näyttö, jolle grafiikat piirretään
-        database_connection: Luo yhteyden tietokantaan
+            screen: Näyttö, jolle grafiikat piirretään
+            font: Fontti, jota piirtämisessä käytetään
+            db_connection: Luo yhteyden tietokantaan
+            settings: Asetukset
+            top_list: Hakee listaan tietokannasta viisi parasta tulosta
     """
 
     def __init__(self, screen, database_connection, settings):
@@ -19,9 +22,8 @@ class ScoreBoard:
 
         Args:
             screen: Näyttö, jolle grafiikat piirretään
-            font: Fontti, jota piirtämisessä käytetään
             db_connection: Luo yhteyden tietokantaan
-            top_list: Hakee listaan tietokannasta viisi parasta tulosta
+            settings: Asetukset
         """
         self.screen = screen
         self.font = pygame.font.SysFont("arial", 30, bold=True)

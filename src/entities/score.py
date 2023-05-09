@@ -4,13 +4,9 @@ class Score:
     Attributes: 
             points: Pisteiden määrä
     """
-    
 
     def __init__(self):
         """Luokan konstruktori, joka luo uuden pistelaskurin
-
-        Args:
-            points: Pisteiden määrä
         """
         self.points = 0
 

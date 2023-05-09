@@ -13,6 +13,11 @@ class Start:
     Attributes:
         screen: näyttö, johon grafiikat piirretään
         settings: asetukset, joita pelissä käytetään
+        font: isoin käytettävä fontti
+        font_medium: keskikokoinen fontti
+        font_small: pieni fontti
+        username_rect: suorakulmio, joka sisään käyttäjänimi kirjoitetaan
+        login_fail: pitää kirjaa siitä, onko peli yritetty aloittaa ilman käyttäjänimeä
     """
 
     def __init__(self, screen, settings):
@@ -21,11 +26,6 @@ class Start:
         Args:
             screen: näyttö, johon grafiikat piirretään
             settings: asetukset, joita pelissä käytetään
-            font: isoin käytettävä fontti
-            font_medium: keskikokoinen fontti
-            font_small: pieni fontti
-            username_rect: suorakulmio, joka sisään käyttäjänimi kirjoitetaan
-            login_fail: pitää kirjaa siitä, onko peli yritetty aloittaa ilman käyttäjänimeä
         """
 
         self.screen = screen
@@ -43,7 +43,7 @@ class Start:
             self.screen, 470, 400, 150, 50, WHITE)
 
     def draw_screen(self):
-        """Piiträä ruudulle oikeat grafiikat.
+        """Piirtää ruudulle oikeat grafiikat.
         """
         pygame.display.set_caption("Pong")
         self.screen.fill((0, 0, 0))
