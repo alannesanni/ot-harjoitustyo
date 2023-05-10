@@ -3,6 +3,7 @@
 Pelaajan on laudan avulla tarkoitus estää palloa osumasta ruudun alareunaan. Lauta liikkuu nuolinäppäinten avulla. Pisteen saa aina, kun osuu laudalla palloon. Pelaajan on kirjoitettava pelin alussa käyttäjänimi, jonka avulla pidetään kirjaa suurimman tuloksen saaneista pelaajista.
 
 ## Release
+-[Viikko 7](https://github.com/alannesanni/ot-harjoitustyo/releases/tag/viikko7)
 - [Viikko 6](https://github.com/alannesanni/ot-harjoitustyo/releases/tag/viikko6)
 - [Viikko 5](https://github.com/alannesanni/ot-harjoitustyo/releases/tag/viikko5)
 
