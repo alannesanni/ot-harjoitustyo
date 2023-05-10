@@ -117,10 +117,10 @@ sequenceDiagram
   User ->> settings: "kirjoita käyttäjänimi"
   settings -->> User:  
   User ->> näkymä: "paina enter"
-  näkymä ->> scoredatabase: ScoreDatabase(get_database_connection()).add_score(settings.username, pong.score.points)
+  näkymä ->> scoredatabase: ScoreDatabase(get_database_connection()).add_score(settings.username, pong.score.points, settings.level)
   scoredatabase -->> näkymä:  
   näkymä ->> scoreboard: ScoreBoard(screen, get_database_connection()).loop()
-  scoreboard ->> scoredatabase: get_top_5()
+  scoreboard ->> scoredatabase: get_top_5(settings.level)
   scoredatabase -->> scoreboard: lista viidestä parhaasta tuloksesta ja käyttäjänimestä
   scoreboard ->> scoreboard: draw_screen()
 ```
