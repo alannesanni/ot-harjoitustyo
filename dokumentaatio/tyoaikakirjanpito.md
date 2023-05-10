@@ -20,4 +20,5 @@ päivä | aika (h) | kuvaus
 5.5. | 5 | vaikeustason muuttaminen ja näppäimet siihen etusivulle
 6.5. | 4 | tietojen tallennuksen muokkaus vaikeustasojen mukaan ja koodin laadun parannus
 7.5. | 3 | ajan lisäys näytölle ja pieniä korjauksia koodiin
-yhteensä |  66 |
+9.5. | 2 | koodin laadun parannus
+yhteensä |  68 |
