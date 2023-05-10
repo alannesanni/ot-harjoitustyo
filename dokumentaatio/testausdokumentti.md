@@ -5,7 +5,7 @@ Ohjelmaa on testattu automatisoiduilla unittesteillä ja manuaalisella testaukse
 
 
 ### Testikattavuus
-Testikattavuudesta on jätetty pois käyttöliittymää käsittelevä koodi. Pelin testauksen haaraumakattavuus on 70%. 
+Testikattavuudesta on jätetty pois käyttöliittymää käsittelevä koodi. Pelin testauksen haaraumakattavuus on 71%. 
 
 ![image](https://github.com/alannesanni/ot-harjoitustyo/assets/128046458/e2b29d8e-a3dd-4cea-aad4-a72ce81ff0fd)
 
