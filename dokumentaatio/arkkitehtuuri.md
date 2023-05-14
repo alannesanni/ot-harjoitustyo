@@ -76,8 +76,6 @@ sequenceDiagram
   paddle -->>pong:  
   pong ->>ball: Ball(color, x, y, radius)
   ball -->>pong: 
-  pong ->>collisions: Collisions()
-  collisions -->>pong: 
   pong ->>score: Score()
   score -->>pong: 
   
